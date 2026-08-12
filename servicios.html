@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+<!-- A2 — Analítica liviana, sin cookies (Plausible).
+     TODO ANTES DE PUBLICAR: reemplazar TU-DOMINIO.com por el dominio real. -->
+<script defer data-domain="TU-DOMINIO.com" src="https://plausible.io/js/script.js"></script>
+<!-- Alternativa a Plausible: GoatCounter (también gratis, también sin cookies).
+     Para usarla en vez de Plausible: comentar el script de arriba,
+     descomentar este, y reemplazar TU-CUENTA por tu cuenta real.
+<script data-goatcounter="https://TU-CUENTA.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
+
+<script>
+(function(){
+  try{
+    var saved = localStorage.getItem('lemuel-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+    if (sessionStorage.getItem('lemuel-iris-open') === '1') {
+      document.documentElement.classList.add('iris-pending');
+      setTimeout(function(){ document.documentElement.classList.remove('iris-pending'); }, 2000);
+    }
+  }catch(e){}
+})();
+</script>
+
+<title>Lo que tiene tu sitio (Plan Premium) — Lemuel Labs</title>
+<meta name="description" content="Sistema de diseño editorial, modo claro/oscuro, sitio multilenguaje, WhatsApp inteligente y más: todo lo que incluye el plan Premium, en detalle.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lo que tiene tu sitio — Lemuel Labs">
+<meta property="og:description" content="Las 10 features del plan Premium, explicadas — y demostradas en vivo en este mismo sitio.">
+<!-- TODO: reemplazar TU-DOMINIO.com por el dominio real cuando el sitio esté publicado -->
+<meta property="og:url" content="https://TU-DOMINIO.com/servicios.html">
+<meta property="og:image" content="https://TU-DOMINIO.com/img/og-cover.jpg">
+<meta property="og:locale" content="es_LA">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lo que tiene tu sitio — Lemuel Labs">
+<meta name="twitter:description" content="Las 10 features del plan Premium, explicadas y demostradas en vivo.">
+<meta name="twitter:image" content="https://TU-DOMINIO.com/img/og-cover.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Lemuel Labs",
+  "description": "Estudio de desarrollo web a medida. Sitios de presentación para pequeños y medianos negocios, en tres niveles de servicio: Esencial, Profesional y Premium.",
+  "url": "https://TU-DOMINIO.com/servicios.html",
+  "telephone": "+5355530224",
+  "email": "lemuel.labs@gmail.com",
+  "priceRange": "$$",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Plan Esencial",
+      "price": "200000",
+      "priceCurrency": "ARS",
+      "url": "https://TU-DOMINIO.com/planes.html#esencial"
+    },
+    {
+      "@type": "Offer",
+      "name": "Plan Profesional",
+      "price": "290000",
+      "priceCurrency": "ARS",
+      "url": "https://TU-DOMINIO.com/planes.html#profesional"
+    },
+    {
+      "@type": "Offer",
+      "name": "Plan Premium",
+      "price": "350000",
+      "priceCurrency": "ARS",
+      "url": "https://TU-DOMINIO.com/planes.html#premium"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<header>
+  <nav class="nav wrap">
+    <a href="index.html" class="logo">Lemuel<span>Labs</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
+      <li><a href="planes.html" data-i18n="nav_planes">Planes</a></li>
+      <li><a href="servicios.html" aria-current="page" data-i18n="nav_servicios">Tu sitio</a></li>
+      <li><a href="proyecto.html" data-i18n="nav_proyecto">Proyecto</a></li>
+      <li><a href="contacto.html" class="btn btn-primary btn-sm" data-i18n="nav_cta">Hablemos</a></li>
+    </ul>
+    <div class="nav-controls">
+      <div class="lang-switch" id="langSwitch" data-open="false">
+        <button type="button" class="lang-switch-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Elegir idioma">
+          <span id="langCurrentLabel">ES</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="lang-switch-list" id="langMenu" role="listbox" aria-label="Idioma" tabindex="-1">
+          <li role="option" data-lang="es" aria-selected="true" id="langOpt-es" data-i18n="lang_name_es">Español</li>
+          <li role="option" data-lang="en" aria-selected="false" id="langOpt-en" data-i18n="lang_name_en">Inglés</li>
+          <li role="option" data-lang="pt" aria-selected="false" id="langOpt-pt" data-i18n="lang_name_pt">Portugués</li>
+        </ul>
+      </div>
+      <button type="button" class="icon-btn" id="themeToggle" aria-pressed="false" aria-label="Cambiar entre modo oscuro y claro">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero hero-compact" id="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow" data-i18n="hero_servicios_eyebrow">Lo que tiene tu sitio</span>
+      <h1 data-i18n-html="hero_servicios_h1">El detalle que se nota <em>sin decirlo</em>.</h1>
+      <p class="hero-sub" data-i18n="hero_servicios_sub">Esto es exactamente lo que incluye el plan Premium — y este mismo sitio lo está usando ahora mismo.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+
+      <div class="premium-note reveal">
+        <span class="badge badge-tag"><span class="badge-dot"></span>Plan Premium</span>
+        <p data-i18n-html="premium_note_p">Estas diez funciones vienen incluidas en el <a href="planes.html#premium">plan Premium ($350.000)</a>. No son promesas de folleto: cada una está funcionando ahora mismo en esta página. Prueba el interruptor de modo claro/oscuro o el selector de idioma de arriba.</p>
+      </div>
+
+      <p class="lead reveal" data-i18n="lead_p">
+        Diseñar bonito es fácil de simular. Lo que realmente separa un sitio de estudio de una plantilla con el logo pegado
+        encima es todo lo que pasa por debajo: cómo lee el teclado, cómo carga en un celular con mala señal, cómo se ve
+        cuando alguien lo comparte en WhatsApp. Estas son las diez cosas que hacemos distinto.
+      </p>
+
+      <h2 class="visually-hidden">Las diez funciones del plan Premium</h2>
+      <div class="feature-grid">
+
+        <div class="feature-card reveal">
+          <span class="feature-icon">🎨</span>
+          <h3 data-i18n="feat1_h3">Sistema de diseño editorial 100% exclusivo</h3>
+          <p data-i18n="feat1_p">Tipografía, composición y detalles — letras capitulares, numeración de sección, citas destacadas — construidos desde cero para la marca. Nada de plantilla con el logo pegado encima.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="feature-icon">✨</span>
+          <h3 data-i18n="feat2_h3">Efectos de scroll de nivel superior</h3>
+          <p data-i18n="feat2_p">Parallax en las fotos y transición entre páginas: navegar el sitio se siente como hojear una revista, no como cargar una web más.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <span class="feature-icon">🌗</span>
+          <h3 data-i18n="feat3_h3">Modo claro y oscuro</h3>
+          <p data-i18n="feat3_p">El sitio se adapta al gusto de quien lo visita, sin parpadeos ni demoras al cargar — algo que ni las grandes cadenas tienen resuelto.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="feature-icon">🌎</span>
+          <h3 data-i18n="feat4_h3">Sitio multilenguaje (español, inglés y portugués)</h3>
+          <p data-i18n="feat4_p">Abre el negocio a turistas y clientes internacionales sin que nadie tenga que escribir una palabra extra. El contenido en español es el que indexa Google; inglés y portugués mejoran la experiencia de quien ya está en el sitio.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <span class="feature-icon">📩</span>
+          <h3 data-i18n="feat5_h3">WhatsApp inteligente en cada punto de contacto</h3>
+          <p data-i18n="feat5_p">No un botón genérico repetido: cada CTA del sitio arma su propio mensaje pre-cargado, específico de dónde se tocó. (Pruébalo en los botones de la página de planes.)</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="feature-icon">🛡️</span>
+          <h3 data-i18n="feat6_h3">Formulario blindado</h3>
+          <p data-i18n="feat6_p">Protección antispam invisible — el bot cae solo, sin que nadie tenga que hacer nada — más validación en tiempo real y confirmación de envío, en vez del cartelito feo del navegador.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <span class="feature-icon">🕐</span>
+          <h3 data-i18n="feat7_h3">Estado en vivo</h3>
+          <p data-i18n="feat7_p">El sitio muestra automáticamente si hay cupos disponibles este mes — sin que nadie tenga que tocar nada. En un local físico, esto se traduce en horario de apertura en tiempo real: si un horario cambia en la tabla, todo se recalcula solo.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="feature-icon">🔍</span>
+          <h3 data-i18n="feat8_h3">Datos estructurados para Google</h3>
+          <p data-i18n="feat8_p">Tu negocio aparece en buscadores con dirección, horario y teléfono directamente en el resultado, no solo un link. Incluye mapa del sitio y las etiquetas que hacen que, al compartir el link en WhatsApp o redes, se vea como una tarjeta profesional con imagen — no un link pelado.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <span class="feature-icon">♿</span>
+          <h3 data-i18n="feat9_h3">Accesibilidad real</h3>
+          <p data-i18n="feat9_p">El sitio respeta cuando alguien tiene las animaciones reducidas activadas en su celular, funciona con teclado y lectores de pantalla, y cuida el contraste de lectura — un detalle que casi nadie en el mercado se toma en serio.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="feature-icon">📄</span>
+          <h3 data-i18n="feat10_h3">Documentación técnica completa</h3>
+          <p data-i18n="feat10_p">Todo el sitio está prolijamente documentado por dentro, como corresponde a un producto serio — para que cualquier ajuste futuro, lo haga quien lo haga, sea simple.</p>
+        </div>
+
+      </div>
+
+      <blockquote class="pull-quote reveal" data-i18n="pull_quote">
+        No es que el Premium tenga "más cosas". Es una categoría distinta de sitio web.
+      </blockquote>
+
+      <div style="margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="planes.html#premium" class="btn btn-primary reveal" data-i18n="see_premium_plan">Ver plan Premium</a>
+        <a href="proyecto.html" class="btn btn-ghost reveal" data-i18n="see_in_action">Verlo en acción en Café Moretti →</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a href="index.html" class="logo" style="font-size:1.05rem;">Lemuel<span>Labs</span></a>
+    <ul class="footer-links">
+      <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
+      <li><a href="planes.html" data-i18n="nav_planes">Planes</a></li>
+      <li><a href="proyecto.html" data-i18n="nav_proyecto">Proyecto</a></li>
+      <li><a href="contacto.html" data-i18n="nav_contacto">Contacto</a></li>
+    </ul>
+    <p>&copy; <span id="year"></span> Lemuel Labs. Sitios a medida, hechos a mano.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
