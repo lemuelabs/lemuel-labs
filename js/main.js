@@ -1,19 +1,17 @@
 /* =========================================================
    LEMUEL LABS — LÓGICA COMPARTIDA (todas las páginas)
    Índice:
-     1. Configuración editable a mano (cupos del mes)
-     2. Diccionario de traducciones (ES/EN/PT)
-     3. Transición "iris" — mecanismo central reutilizado por
+     1. Diccionario de traducciones (ES/EN/PT)
+     2. Transición "iris" — mecanismo central reutilizado por
         tema, idioma y navegación entre páginas
-     4. Tema claro/oscuro
-     5. Selector de idioma (dropdown accesible)
-     6. Nav móvil + interceptor de navegación (iris)
-     7. Estado activo del nav (URL actual + anclas si las hay)
-     8. Gradiente mouse-reactive (firma visual)
-     9. Scroll reveal
-     10. Badge "cupos disponibles"
-     11. Formulario de contacto: honeypot + validación en vivo
-     12. Init
+     3. Tema claro/oscuro
+     4. Selector de idioma (dropdown accesible)
+     5. Nav móvil + interceptor de navegación (iris)
+     6. Estado activo del nav (URL actual + anclas si las hay)
+     7. Gradiente mouse-reactive (firma visual)
+     8. Scroll reveal
+     9. Formulario de contacto: honeypot + validación en vivo
+     10. Init
    ========================================================= */
 
 (function () {
@@ -22,28 +20,7 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* -------------------------------------------------------
-     1. CONFIGURACIÓN EDITABLE (cupos del mes)
-     El valor real vive en /data/config.json — así se puede
-     editar sin tocar JS. Mientras carga (o si falla el fetch,
-     por ejemplo al abrir el sitio con file:// sin servidor),
-     queda este valor de reserva.
-     ------------------------------------------------------- */
-  let cuposDisponibles = true;
-
-  async function loadConfig() {
-    try {
-      const res = await fetch('data/config.json', { cache: 'no-store' });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (typeof data.cuposDisponibles === 'boolean') cuposDisponibles = data.cuposDisponibles;
-    } catch (e) {
-      // Sin servidor local (file://) el fetch puede fallar por CORS: se
-      // conserva el valor de reserva. En un hosting real esto no pasa.
-    }
-  }
-
-  /* -------------------------------------------------------
-     2. TRADUCCIONES
+     1. TRADUCCIONES
      ------------------------------------------------------- */
   const dict = {
     nav_inicio:    { es: 'Inicio',   en: 'Home',       pt: 'Início' },
@@ -75,9 +52,6 @@
     hero_contacto_h1:      { es: 'Cuéntanos sobre <em>tu proyecto</em>.', en: 'Tell us about <em>your project</em>.', pt: 'Conte sobre <em>seu projeto</em>.' },
     hero_contacto_sub:     { es: 'Respondemos por WhatsApp, email o el formulario de acá abajo — lo que te resulte más cómodo.', en: 'We reply over WhatsApp, email, or the form below — whatever works best for you.', pt: 'Respondemos por WhatsApp, e-mail ou o formulário abaixo — o que for mais fácil para você.' },
 
-    cupos_open:   { es: 'Cupos disponibles en', en: 'Slots open in', pt: 'Vagas abertas em' },
-    cupos_closed: { es: 'Sin cupos disponibles por ahora', en: 'No slots available right now', pt: 'Sem vagas disponíveis no momento' },
-
     lang_name_es: { es: 'Español', en: 'Spanish', pt: 'Espanhol' },
     lang_name_en: { es: 'Inglés', en: 'English', pt: 'Inglês' },
     lang_name_pt: { es: 'Portugués', en: 'Portuguese', pt: 'Português' },
@@ -101,11 +75,11 @@
     services_eyebrow: { es: 'Qué hacemos', en: 'What we do', pt: 'O que fazemos' },
     services_h2: { es: 'Un plan para cada etapa de tu negocio', en: 'A plan for every stage of your business', pt: 'Um plano para cada etapa do seu negócio' },
     services_p: { es: 'No vendemos "diseño web" genérico. Vendemos tres niveles claros, cada uno pensado para un momento distinto.', en: 'We don\'t sell generic "web design". We sell three clear levels, each built for a different moment.', pt: 'Não vendemos "design web" genérico. Vendemos três níveis claros, cada um pensado para um momento diferente.' },
-    service1_h3: { es: 'Tu carta de presentación', en: 'Your introduction card', pt: 'Seu cartão de apresentação' },
+    service1_h3: { es: 'Tu carta de presentación digital, lista en días', en: 'Your digital introduction card, ready in days', pt: 'Seu cartão de apresentação digital, pronto em dias' },
     service1_p: { es: 'Una página 100% a medida, responsive y con WhatsApp directo. Lista en días, sin vueltas.', en: 'A 100% custom, responsive page with direct WhatsApp. Ready in days, no fuss.', pt: 'Uma página 100% sob medida, responsiva e com WhatsApp direto. Pronta em dias, sem complicação.' },
     service2_h3: { es: 'Tu negocio en movimiento', en: 'Your business in motion', pt: 'Seu negócio em movimento' },
     service2_p: { es: 'Dos páginas, formulario validado, analítica y animaciones al hacer scroll.', en: 'Two pages, validated form, analytics, and scroll animations.', pt: 'Duas páginas, formulário validado, analytics e animações ao rolar a página.' },
-    service3_h3: { es: 'La referencia de tu rubro', en: 'The reference in your industry', pt: 'A referência do seu setor' },
+    service3_h3: { es: 'El nivel que separa tu negocio de la competencia — literalmente', en: 'The level that sets your business apart from the competition — literally', pt: 'O nível que separa o seu negócio da concorrência — literalmente' },
     service3_p: { es: 'Sistema de diseño editorial, multilenguaje, modo claro/oscuro y SEO avanzado — como este mismo sitio.', en: 'Editorial design system, multilingual, light/dark mode, and advanced SEO — like this very site.', pt: 'Sistema de design editorial, multilíngue, modo claro/escuro e SEO avançado — como este mesmo site.' },
     services_cta: { es: 'Ver el detalle de cada plan →', en: 'See the details of each plan →', pt: 'Ver os detalhes de cada plano →' },
 
@@ -154,26 +128,26 @@
 
     /* --- Planes: nombres, hooks, features y CTA --- */
     plan1_name: { es: 'Plan Esencial', en: 'Essential Plan', pt: 'Plano Essencial' },
-    plan1_hook: { es: '"Tu carta de presentación digital, lista en días."', en: '"Your digital introduction card, ready in days."', pt: '"Seu cartão de apresentação digital, pronto em dias."' },
-    plan1_f1: { es: '<strong>Una página</strong>, 100% a medida para tu marca — nada de plantillas', en: '<strong>One page</strong>, 100% custom for your brand — no templates', pt: '<strong>Uma página</strong>, 100% sob medida para sua marca — nada de templates' },
-    plan1_f2: { es: 'Totalmente <strong>responsive</strong>: se ve perfecta en el celular, donde te encuentra el 80% de tus clientes', en: 'Fully <strong>responsive</strong>: looks perfect on mobile, where 80% of your customers find you', pt: 'Totalmente <strong>responsivo</strong>: fica perfeito no celular, onde 80% dos seus clientes te encontram' },
-    plan1_f3: { es: '<strong>WhatsApp directo</strong> — tu cliente te escribe con un toque, sin formularios eternos', en: '<strong>Direct WhatsApp</strong> — your customer messages you in one tap, no endless forms', pt: '<strong>WhatsApp direto</strong> — seu cliente escreve com um toque, sem formulários intermináveis' },
-    plan1_f4: { es: '<strong>SEO base</strong>: título, descripción y estructura para que Google te entienda', en: '<strong>Basic SEO</strong>: title, description and structure so Google understands your business', pt: '<strong>SEO básico</strong>: título, descrição e estrutura para o Google entender seu negócio' },
+    plan1_hook: { es: '"Tu carta de presentación digital, lista en días." Ideal si necesitas una presencia profesional ya — sin vueltas, sin relleno, directa al grano.', en: '"Your digital introduction card, ready in days." Ideal if you need a professional presence now — no detours, no filler, straight to the point.', pt: '"Seu cartão de apresentação digital, pronto em dias." Ideal se você precisa de uma presença profissional já — sem rodeios, sem enchimento, direto ao ponto.' },
+    plan1_f1: { es: 'Diseño de <strong>una página</strong>, 100% a medida para tu marca (nada de plantillas genéricas)', en: 'Design of <strong>one page</strong>, 100% custom for your brand (no generic templates)', pt: 'Design de <strong>uma página</strong>, 100% sob medida para sua marca (nada de templates genéricos)' },
+    plan1_f2: { es: 'Totalmente <strong>responsive</strong>: se ve perfecto en el celular, que es donde te va a encontrar el 80% de tus clientes', en: 'Fully <strong>responsive</strong>: it looks perfect on mobile, which is where 80% of your customers are going to find you', pt: 'Totalmente <strong>responsivo</strong>: fica perfeito no celular, que é onde 80% dos seus clientes vão te encontrar' },
+    plan1_f3: { es: '<strong>Botón de WhatsApp directo</strong> — tu cliente te escribe con un toque, sin formularios eternos', en: '<strong>Direct WhatsApp button</strong> — your customer messages you in one tap, no endless forms', pt: '<strong>Botão de WhatsApp direto</strong> — seu cliente escreve com um toque, sem formulários intermináveis' },
+    plan1_f4: { es: '<strong>SEO base</strong>: título, descripción y estructura pensada para que Google entienda tu negocio', en: '<strong>Basic SEO</strong>: title, description and structure designed so Google understands your business', pt: '<strong>SEO básico</strong>: título, descrição e estrutura pensada para o Google entender seu negócio' },
     plan1_f5: { es: 'Favicon e identidad visual coherente en la pestaña del navegador', en: 'Favicon and consistent visual identity in the browser tab', pt: 'Favicon e identidade visual coerente na aba do navegador' },
-    plan1_f6: { es: 'Tuyo desde el día uno, sin mensualidades ni dependencia de plataformas de terceros', en: 'Yours from day one, no monthly fees and no dependence on third-party platforms', pt: 'Seu desde o primeiro dia, sem mensalidades nem dependência de plataformas de terceiros' },
+    plan1_f6: { es: 'Tuyo desde el día uno: sin mensualidades ni dependencia de plataformas de terceros', en: 'Yours from day one: no monthly fees and no dependence on third-party platforms', pt: 'Seu desde o primeiro dia: sem mensalidades nem dependência de plataformas de terceiros' },
     plan1_for: { es: 'Para quién es: negocios que necesitan tener presencia online ya, con una imagen que no dé vergüenza mostrar.', en: 'Who it\'s for: businesses that need an online presence now, with an image they\'re not embarrassed to show.', pt: 'Para quem é: negócios que precisam de presença online agora, com uma imagem da qual não tenham vergonha.' },
     plan1_cta: { es: 'Elegir Esencial', en: 'Choose Essential', pt: 'Escolher Essencial' },
 
     plan2_name: { es: 'Plan Profesional', en: 'Professional Plan', pt: 'Plano Profissional' },
-    plan2_hook: { es: '"Tu negocio en movimiento."', en: '"Your business in motion."', pt: '"Seu negócio em movimento."' },
+    plan2_hook: { es: '"Tu negocio en movimiento." Todo lo del plan Esencial, llevado un escalón más allá — porque tu negocio tiene más para contar.', en: '"Your business in motion." Everything in the Essential plan, taken a step further — because your business has more to tell.', pt: '"Seu negócio em movimento." Tudo do plano Essencial, levado um passo além — porque seu negócio tem mais para contar.' },
     plan2_f1: { es: 'Todo lo del <strong>Esencial</strong>, más:', en: 'Everything in <strong>Essential</strong>, plus:', pt: 'Tudo do <strong>Essencial</strong>, mais:' },
-    plan2_f2: { es: 'Sitio de <strong>2 páginas</strong>: presentación + catálogo, servicios o carta', en: '<strong>2-page</strong> site: introduction + catalog, services or menu', pt: 'Site de <strong>2 páginas</strong>: apresentação + catálogo, serviços ou cardápio' },
-    plan2_f3: { es: '<strong>WhatsApp contextual</strong>: cada sección arma su propio mensaje pre-cargado', en: '<strong>Contextual WhatsApp</strong>: each section builds its own pre-filled message', pt: '<strong>WhatsApp contextual</strong>: cada seção gera sua própria mensagem pré-preenchida' },
-    plan2_f4: { es: '<strong>Formulario con validación real</strong> y confirmación de envío', en: '<strong>Form with real validation</strong> and submission confirmation', pt: '<strong>Formulário com validação real</strong> e confirmação de envio' },
-    plan2_f5: { es: 'Animaciones sutiles al hacer scroll — se siente vivo, no una foto estática', en: 'Subtle scroll animations — it feels alive, not a static photo', pt: 'Animações sutis ao rolar a página — parece vivo, não uma foto estática' },
-    plan2_f6: { es: '<strong>Analítica integrada</strong> desde el día uno: sabes cuánta gente entra a tu sitio y qué es lo que más le interesa', en: '<strong>Built-in analytics</strong> from day one: know how many people visit your site and what they\'re most interested in', pt: '<strong>Analytics integrado</strong> desde o primeiro dia: saiba quantas pessoas visitam seu site e o que mais interessa a elas' },
-    plan2_f7: { es: 'Meta tags completos: se ve como tarjeta profesional al compartir en redes', en: 'Full meta tags: looks like a professional card when shared on social media', pt: 'Meta tags completas: aparece como um cartão profissional ao compartilhar nas redes' },
-    plan2_for: { es: 'Para quién es: negocios con trayectoria que necesitan una web tan seria como el negocio en persona.', en: 'Who it\'s for: established businesses that need a website as serious as the business itself.', pt: 'Para quem é: negócios com trajetória que precisam de um site tão sério quanto o negócio em pessoa.' },
+    plan2_f2: { es: 'Sitio de <strong>2 páginas</strong>: tu presentación + una sección propia para catálogo, servicios o carta', en: '<strong>2-page</strong> site: your introduction + a dedicated section for catalog, services or menu', pt: 'Site de <strong>2 páginas</strong>: sua apresentação + uma seção própria para catálogo, serviços ou cardápio' },
+    plan2_f3: { es: '<strong>WhatsApp contextual</strong>: cada producto o sección arma su propio mensaje pre-cargado, no un botón genérico repetido', en: '<strong>Contextual WhatsApp</strong>: each product or section builds its own pre-filled message, not a repeated generic button', pt: '<strong>WhatsApp contextual</strong>: cada produto ou seção gera sua própria mensagem pré-preenchida, não um botão genérico repetido' },
+    plan2_f4: { es: '<strong>Formulario de contacto</strong> con validación real (no el cartelito feo del navegador) y confirmación de envío', en: '<strong>Contact form</strong> with real validation (not the browser\'s ugly little popup) and submission confirmation', pt: '<strong>Formulário de contato</strong> com validação real (não o aviso feio do navegador) e confirmação de envio' },
+    plan2_f5: { es: 'Animaciones sutiles al hacer scroll — el sitio se siente vivo, no una foto estática', en: 'Subtle scroll animations — the site feels alive, not a static photo', pt: 'Animações sutis ao rolar a página — o site parece vivo, não uma foto estática' },
+    plan2_f6: { es: '<strong>Analítica integrada</strong> — sabes cuánta gente entra y qué mira, desde el día uno', en: '<strong>Built-in analytics</strong> — you know how many people visit and what they look at, from day one', pt: '<strong>Analytics integrado</strong> — você sabe quantas pessoas entram e o que veem, desde o primeiro dia' },
+    plan2_f7: { es: 'Meta tags completos (Open Graph/Twitter) — cuando compartes tu web en redes, se ve como una tarjeta profesional, no un link pelado', en: 'Full meta tags (Open Graph/Twitter) — when you share your site on social media, it looks like a professional card, not a bare link', pt: 'Meta tags completas (Open Graph/Twitter) — quando você compartilha seu site nas redes, ele aparece como um cartão profissional, não um link seco' },
+    plan2_for: { es: 'Para quién es: negocios que ya tienen algo de trayectoria y necesitan que la web hable con la misma seriedad que el negocio en persona.', en: 'Who it\'s for: businesses that already have some track record and need their website to speak with the same seriousness as the business in person.', pt: 'Para quem é: negócios que já têm alguma trajetória e precisam que o site fale com a mesma seriedade que o negócio em pessoa.' },
     plan2_cta: { es: 'Elegir Profesional', en: 'Choose Professional', pt: 'Escolher Profissional' },
 
     plan3_name: { es: 'Plan Premium', en: 'Premium Plan', pt: 'Plano Premium' },
@@ -192,10 +166,10 @@
     plan3_cta: { es: 'Elegir Premium', en: 'Choose Premium', pt: 'Escolher Premium' },
 
     plans_note_h3: { es: '¿Cuál elegir?', en: 'Which one to choose?', pt: 'Qual escolher?' },
-    plans_note_p1: { es: 'Si lo que buscas es tener presencia online, <strong>Esencial</strong> te resuelve. Si tu negocio ya tiene trayectoria y necesita más presencia, <strong>Profesional</strong> es el punto justo.', en: 'If you just need an online presence, <strong>Essential</strong> covers it. If your business is established and needs more presence, <strong>Professional</strong> is the sweet spot.', pt: 'Se o que você busca é ter presença online, o <strong>Essencial</strong> resolve. Se seu negócio já tem trajetória e precisa de mais presença, o <strong>Profissional</strong> é o ponto certo.' },
-    plans_note_p2: { es: 'Pero si comparas la diferencia entre lo que pagas y lo que obtienes con <strong>Premium</strong>, la cuenta se hace sola: por menos de $50.000 más que el Profesional, obtienes un sitio multilenguaje, con modo oscuro, efectos editoriales y SEO avanzado — el mismo nivel que tiene Café Moretti, nuestro proyecto de demostración. No es que el Premium sea "el caro". Es que los otros dos son el punto de partida.', en: 'But compare what you pay to what you get with <strong>Premium</strong>, and the math does itself: for less than $50,000 more than Professional, you get a multilingual site, dark mode, editorial effects and advanced SEO — the same level as Café Moretti, our demo project. Premium isn\'t "the expensive one". The other two are the starting point.', pt: 'Mas se você comparar a diferença entre o que paga e o que recebe com o <strong>Premium</strong>, a conta fecha sozinha: por menos de $50.000 a mais que o Profissional, você leva um site multilíngue, com modo escuro, efeitos editoriais e SEO avançado — o mesmo nível do Café Moretti, nosso projeto de demonstração. Não é que o Premium seja "o caro". É que os outros dois são o ponto de partida.' },
+    plans_note_p1: { es: 'Si lo que buscas es estar online, <strong>Esencial</strong> te resuelve. Si tu negocio ya tiene peso y necesita más presencia, <strong>Profesional</strong> es el punto justo.', en: 'If what you\'re looking for is to be online, <strong>Essential</strong> covers it. If your business already has weight and needs more presence, <strong>Professional</strong> is the sweet spot.', pt: 'Se o que você busca é estar online, o <strong>Essencial</strong> resolve. Se seu negócio já tem peso e precisa de mais presença, o <strong>Profissional</strong> é o ponto certo.' },
+    plans_note_p2: { es: 'Pero si miras la diferencia entre lo que pagas y lo que te llevas con <strong>Premium</strong>, la cuenta se hace sola: por menos de $50.000 más que el Profesional, te llevas un sitio multilenguaje, con modo oscuro, efectos editoriales, SEO avanzado con datos estructurados y protección antispam real — el mismo nivel que tiene Café Moretti, nuestro proyecto de demostración. No es que el Premium sea "el caro". Es que los otros dos son el punto de partida.', en: 'But if you look at the difference between what you pay and what you get with <strong>Premium</strong>, the math does itself: for less than $50,000 more than Professional, you get a multilingual site, dark mode, editorial effects, advanced SEO with structured data and real anti-spam protection — the same level as Café Moretti, our demo project. Premium isn\'t "the expensive one". The other two are the starting point.', pt: 'Mas se você olhar a diferença entre o que paga e o que leva com o <strong>Premium</strong>, a conta fecha sozinha: por menos de $50.000 a mais que o Profissional, você leva um site multilíngue, com modo escuro, efeitos editoriais, SEO avançado com dados estruturados e proteção antispam real — o mesmo nível do Café Moretti, nosso projeto de demonstração. Não é que o Premium seja "o caro". É que os outros dois são o ponto de partida.' },
 
-    /* --- Planes: tabla comparativa (D2) --- */
+    /* --- Planes: tabla comparativa --- */
     compare_eyebrow: { es: 'Comparación rápida', en: 'Quick comparison', pt: 'Comparação rápida' },
     compare_h2: { es: 'Qué incluye cada nivel', en: 'What each level includes', pt: 'O que cada nível inclui' },
     compare_caption: { es: 'Comparación de funciones entre los planes Esencial, Profesional y Premium', en: 'Feature comparison between the Essential, Professional and Premium plans', pt: 'Comparação de funções entre os planos Essencial, Profissional e Premium' },
@@ -236,8 +210,8 @@
     feat5_p: { es: 'No un botón genérico repetido: cada CTA del sitio arma su propio mensaje pre-cargado, específico de dónde se tocó. (Pruébalo en los botones de la página de planes.)', en: 'Not a repeated generic button: every CTA on the site builds its own pre-filled message, specific to where it was clicked. (Try it on the buttons on the plans page.)', pt: 'Não é um botão genérico repetido: cada CTA do site gera sua própria mensagem pré-preenchida, específica de onde foi clicado. (Experimente nos botões da página de planos.)' },
     feat6_h3: { es: 'Formulario blindado', en: 'Spam-proof form', pt: 'Formulário blindado' },
     feat6_p: { es: 'Protección antispam invisible — el bot cae solo, sin que nadie tenga que hacer nada — más validación en tiempo real y confirmación de envío, en vez del cartelito feo del navegador.', en: 'Invisible anti-spam protection — the bot trips itself up, no one has to do anything — plus real-time validation and a send confirmation, instead of the browser\'s ugly little popup.', pt: 'Proteção antispam invisível — o bot cai sozinho, sem que ninguém precise fazer nada — além de validação em tempo real e confirmação de envio, em vez do aviso feio do navegador.' },
-    feat7_h3: { es: 'Estado en vivo', en: 'Live status', pt: 'Status em tempo real' },
-    feat7_p: { es: 'El sitio muestra automáticamente si hay cupos disponibles este mes — sin que nadie tenga que tocar nada. En un local físico, esto se traduce en horario de apertura en tiempo real: si un horario cambia en la tabla, todo se recalcula solo.', en: 'The site automatically shows whether there are open slots this month — without anyone touching anything. For a physical location, this becomes real-time opening hours: change a time in the table and everything recalculates itself.', pt: 'O site mostra automaticamente se há vagas disponíveis neste mês — sem que ninguém precise mexer em nada. Em um local físico, isso vira horário de funcionamento em tempo real: se um horário muda na tabela, tudo se recalcula sozinho.' },
+    feat7_h3: { es: 'Horario en vivo', en: 'Live hours', pt: 'Horário em tempo real' },
+    feat7_p: { es: 'Tu web muestra automáticamente si estás abierto o cerrado ahora mismo, y hasta qué hora — sin que tengas que tocar nada nunca. Si un horario cambia en la tabla, todo se recalcula solo.', en: 'Your site automatically shows whether you\'re open or closed right now, and until what time — without you ever having to touch anything. If a schedule changes in the table, everything recalculates itself.', pt: 'Seu site mostra automaticamente se você está aberto ou fechado agora, e até que horas — sem que você precise mexer em nada. Se um horário muda na tabela, tudo se recalcula sozinho.' },
     feat8_h3: { es: 'Datos estructurados para Google', en: 'Structured data for Google', pt: 'Dados estruturados para o Google' },
     feat8_p: { es: 'Tu negocio aparece en buscadores con dirección, horario y teléfono directamente en el resultado, no solo un link. Incluye mapa del sitio y las etiquetas que hacen que, al compartir el link en WhatsApp o redes, se vea como una tarjeta profesional con imagen — no un link pelado.', en: 'Your business shows up in search results with address, hours and phone number right in the result, not just a link. Includes a sitemap and the tags that make the link look like a professional card with an image when shared on WhatsApp or social media — not a bare link.', pt: 'Seu negócio aparece nos buscadores com endereço, horário e telefone diretamente no resultado, não só um link. Inclui mapa do site e as tags que fazem o link parecer um cartão profissional com imagem ao compartilhar no WhatsApp ou redes sociais — não um link seco.' },
     feat9_h3: { es: 'Accesibilidad real', en: 'Real accessibility', pt: 'Acessibilidade real' },
@@ -259,7 +233,7 @@
   function wait(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
 
   /* -------------------------------------------------------
-     3. TRANSICIÓN "IRIS"
+     2. TRANSICIÓN "IRIS"
      Un agujero circular (máscara SVG) se cierra hasta tapar toda
      la pantalla, muestra el logo, aplica el cambio real por debajo,
      y se vuelve a abrir. Mismo mecanismo para tema, idioma y
@@ -438,7 +412,7 @@
   }
 
   /* -------------------------------------------------------
-     4. TEMA CLARO/OSCURO
+     3. TEMA CLARO/OSCURO
      ------------------------------------------------------- */
   function initTheme() {
     const toggle = document.getElementById('themeToggle');
@@ -457,7 +431,7 @@
   }
 
   /* -------------------------------------------------------
-     5. SELECTOR DE IDIOMA (dropdown accesible)
+     4. SELECTOR DE IDIOMA (dropdown accesible)
      ------------------------------------------------------- */
   function applyLanguage(lang) {
     document.documentElement.lang = lang;
@@ -481,7 +455,6 @@
       opt.setAttribute('aria-selected', opt.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
 
-    updateCuposBadge(lang);
     try { localStorage.setItem('lemuel-lang', lang); } catch (e) { /* noop */ }
   }
 
@@ -562,7 +535,7 @@
   }
 
   /* -------------------------------------------------------
-     6. NAV MÓVIL + INTERCEPTOR DE NAVEGACIÓN (iris)
+     5. NAV MÓVIL + INTERCEPTOR DE NAVEGACIÓN (iris)
      ------------------------------------------------------- */
   function initNav() {
     const navToggle = document.getElementById('navToggle');
@@ -604,7 +577,7 @@
   }
 
   /* -------------------------------------------------------
-     7. ESTADO ACTIVO DEL NAV
+     6. ESTADO ACTIVO DEL NAV
      ------------------------------------------------------- */
   function initActiveNav() {
     const navLinks = document.querySelectorAll('#navLinks a[href]');
@@ -645,7 +618,7 @@
   }
 
   /* -------------------------------------------------------
-     8. GRADIENTE MOUSE-REACTIVE
+     7. GRADIENTE MOUSE-REACTIVE
      ------------------------------------------------------- */
   function initMouseGradient() {
     if (reducedMotion) return;
@@ -670,7 +643,7 @@
   }
 
   /* -------------------------------------------------------
-     9. SCROLL REVEAL
+     8. SCROLL REVEAL
      ------------------------------------------------------- */
   function initReveal() {
     const revealEls = document.querySelectorAll('.reveal');
@@ -690,33 +663,7 @@
   }
 
   /* -------------------------------------------------------
-     10. BADGE "CUPOS DISPONIBLES"
-     ------------------------------------------------------- */
-  function updateCuposBadge(lang) {
-    const badges = document.querySelectorAll('[data-cupos-badge]');
-    if (!badges.length) return;
-    const locale = localeMap[lang] || 'es-419';
-    const month = new Date().toLocaleString(locale, { month: 'long' });
-    const monthCap = month.charAt(0).toUpperCase() + month.slice(1);
-
-    badges.forEach((badge) => {
-      let dot = badge.querySelector('.badge-dot');
-      if (!dot) { dot = document.createElement('span'); dot.className = 'badge-dot'; badge.prepend(dot); }
-      let textEl = badge.querySelector('.badge-text');
-      if (!textEl) { textEl = document.createElement('span'); textEl.className = 'badge-text'; badge.appendChild(textEl); }
-
-      if (cuposDisponibles) {
-        badge.setAttribute('data-status', 'open');
-        textEl.textContent = `${dict.cupos_open[lang] || dict.cupos_open.es} ${monthCap}`;
-      } else {
-        badge.setAttribute('data-status', 'closed');
-        textEl.textContent = dict.cupos_closed[lang] || dict.cupos_closed.es;
-      }
-    });
-  }
-
-  /* -------------------------------------------------------
-     11. FORMULARIO DE CONTACTO — honeypot + validación real-time
+     9. FORMULARIO DE CONTACTO — honeypot + validación real-time
      ------------------------------------------------------- */
   function initContactForm() {
     const form = document.getElementById('contactForm');
@@ -852,17 +799,17 @@
   }
 
   /* -------------------------------------------------------
-     12. INIT
+     10. INIT
      ------------------------------------------------------- */
   initIrisOnLoad();
 
-  // Punto 3 (bug de "atrás" en mobile): cuando el navegador restaura esta
-  // página desde la bfcache (back/forward cache) en vez de recargarla,
-  // NO se dispara DOMContentLoaded de nuevo — el DOM vuelve exactamente
-  // en el estado congelado en que quedó al navegar (con `inert` puesto en
-  // todo por lockContentForTransition() y el overlay del iris tapando la
-  // pantalla). `pageshow` con `event.persisted === true` es la única señal
-  // fiable de que pasó esto, así que ahí reseteamos todo a su estado normal.
+  // Cuando el navegador restaura esta página desde la bfcache
+  // (back/forward cache) en vez de recargarla, NO se dispara
+  // DOMContentLoaded de nuevo — el DOM vuelve exactamente en el estado en
+  // que quedó al navegar (con `inert` puesto en todo por
+  // lockContentForTransition() y el overlay del iris tapando la pantalla).
+  // `pageshow` con `event.persisted === true` es la única señal fiable de
+  // que pasó esto, así que ahí reseteamos todo a su estado normal.
   window.addEventListener('pageshow', (event) => {
     if (!event.persisted) return;
     unlockContentAfterTransition();
@@ -871,11 +818,9 @@
     try { sessionStorage.removeItem('lemuel-iris-open'); } catch (e) { /* noop */ }
   });
 
-  document.addEventListener('DOMContentLoaded', async () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    await loadConfig();
 
     initNav();
     initActiveNav();

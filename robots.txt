@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: reemplazar TU-DOMINIO.com por el dominio real cuando el sitio esté publicado
-Sitemap: https://TU-DOMINIO.com/sitemap.xml
+Sitemap: https://lemuelabs.github.io/lemuel-labs/sitemap.xml

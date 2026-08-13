@@ -226,11 +226,8 @@ button{ font:inherit; }
   background:var(--text-dimmer);
   flex-shrink:0;
 }
-.badge[data-status="open"] .badge-dot{ background:var(--ok); box-shadow:0 0 0 3px rgba(52,211,153,0.18); }
-.badge[data-status="closed"] .badge-dot{ background:var(--text-dimmer); }
-
-/* Variante "etiqueta": para marcar algo (ej. "Plan Premium") sin usar el
-   sistema de estados abierto/cerrado de los cupos. */
+/* Variante "etiqueta": para marcar algo (ej. "Plan Premium") con el
+   mismo lenguaje visual del badge, sin el punto de estado. */
 .badge-tag{ border-color:var(--accent); color:var(--accent-text); }
 .badge-tag .badge-dot{ background:var(--accent); box-shadow:none; }
 
@@ -679,7 +676,7 @@ section{ position:relative; padding:6.5rem 0; }
 .plans-note p{ margin-top:0.7rem; color:var(--text-dim); font-size:0.95rem; max-width:70ch; }
 .plans-note p + p{ margin-top:0.6rem; }
 
-/* Tabla comparativa (D2) */
+/* Tabla comparativa de planes */
 .compare-table-wrap{
   position:relative;
   margin-top:1.5rem;
@@ -728,7 +725,7 @@ section{ position:relative; padding:6.5rem 0; }
 }
 .compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td{ border-bottom:none; }
 
-/* Reseñas próximamente (D4): slots vacíos, con estilo, sin inventar nada */
+/* Slots de reseñas vacíos, con estilo, sin contenido inventado */
 .review-slots{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -1096,10 +1093,10 @@ html.iris-pending body > *:not(.iris-overlay){ visibility:hidden; }
   .lang-switch-list{ right:-0.5rem; }
   .plan-card.featured::before{ font-size:0.6rem; padding:0.3rem 0.6rem; left:1.4rem; max-width:calc(100% - 2.8rem); }
 
-  /* Punto 2: la tabla comparativa en mobile no cabe entera (min-width:520px
-     en un viewport de ~360px), así que además de compactarla agresivamente
-     agregamos una señal visual clara de que hay que deslizar — el scroll
-     horizontal solo no alcanza como pista. */
+  /* La tabla comparativa no entra completa en un viewport angosto (~360px);
+     además de compactarla agresivamente acá, sumamos una señal visual
+     clara de que hay que deslizar — el scroll horizontal solo no alcanza
+     como pista. */
   .compare-scroll-hint{ display:block; }
   .compare-table-wrap::after{
     content:"";

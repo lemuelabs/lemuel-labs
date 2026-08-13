@@ -9,9 +9,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 
-<!-- A2 — Analítica liviana, sin cookies (Plausible).
-     TODO ANTES DE PUBLICAR: reemplazar TU-DOMINIO.com por el dominio real. -->
-<script defer data-domain="TU-DOMINIO.com" src="https://plausible.io/js/script.js"></script>
+<!-- Analítica liviana y sin cookies, vía Plausible. -->
+<script defer data-domain="lemuelabs.github.io" src="https://plausible.io/js/script.js"></script>
 <!-- Alternativa a Plausible: GoatCounter (también gratis, también sin cookies).
      Para usarla en vez de Plausible: comentar el script de arriba,
      descomentar este, y reemplazar TU-CUENTA por tu cuenta real.
@@ -38,18 +37,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Planes y precios — Lemuel Labs">
 <meta property="og:description" content="Esencial, Profesional y Premium: tres niveles de sitio web a medida, con precio y features claras.">
-<!-- TODO: reemplazar TU-DOMINIO.com por el dominio real cuando el sitio esté publicado.
-     Mientras el dominio sea un placeholder, og:image/twitter:image apuntan a una URL
-     que no existe todavía (https://TU-DOMINIO.com/img/og-cover.jpg) — esa es la razón
-     principal por la que hoy no se ve la imagen al compartir el link. El resto ya está
-     resuelto: og-cover.jpg existe, es .jpg (liviano, ~40KB, más compatible con
-     crawlers sociales que .webp) y las etiquetas og:image:width/height ya están
-     completas. Una vez publicado con el dominio real, verificar la preview con:
+<!-- Para revisar cómo se ve la vista previa al compartir el link:
      Facebook Sharing Debugger (developers.facebook.com/tools/debug),
      Twitter Card Validator (cards-dev.twitter.com/validator) o
      LinkedIn Post Inspector (linkedin.com/post-inspector). -->
-<meta property="og:url" content="https://TU-DOMINIO.com/planes.html">
-<meta property="og:image" content="https://TU-DOMINIO.com/img/og-cover.jpg">
+<meta property="og:url" content="https://lemuelabs.github.io/lemuel-labs/planes.html">
+<meta property="og:image" content="https://lemuelabs.github.io/lemuel-labs/img/og-cover.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -58,7 +51,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Planes y precios — Lemuel Labs">
 <meta name="twitter:description" content="Esencial, Profesional y Premium: tres niveles de sitio web a medida.">
-<meta name="twitter:image" content="https://TU-DOMINIO.com/img/og-cover.jpg">
+<meta name="twitter:image" content="https://lemuelabs.github.io/lemuel-labs/img/og-cover.jpg">
 
 <script type="application/ld+json">
 {
@@ -66,7 +59,7 @@
   "@type": "ProfessionalService",
   "name": "Lemuel Labs",
   "description": "Estudio de desarrollo web a medida. Sitios de presentación para pequeños y medianos negocios, en tres niveles de servicio: Esencial, Profesional y Premium.",
-  "url": "https://TU-DOMINIO.com/planes.html",
+  "url": "https://lemuelabs.github.io/lemuel-labs/planes.html",
   "telephone": "+5355530224",
   "email": "lemuel.labs@gmail.com",
   "priceRange": "$$",
@@ -76,21 +69,21 @@
       "name": "Plan Esencial",
       "price": "150000",
       "priceCurrency": "ARS",
-      "url": "https://TU-DOMINIO.com/planes.html#esencial"
+      "url": "https://lemuelabs.github.io/lemuel-labs/planes.html#esencial"
     },
     {
       "@type": "Offer",
       "name": "Plan Profesional",
       "price": "200000",
       "priceCurrency": "ARS",
-      "url": "https://TU-DOMINIO.com/planes.html#profesional"
+      "url": "https://lemuelabs.github.io/lemuel-labs/planes.html#profesional"
     },
     {
       "@type": "Offer",
       "name": "Plan Premium",
       "price": "250000",
       "priceCurrency": "ARS",
-      "url": "https://TU-DOMINIO.com/planes.html#premium"
+      "url": "https://lemuelabs.github.io/lemuel-labs/planes.html#premium"
     }
   ]
 }
@@ -154,14 +147,14 @@
         <div class="plan-card reveal" id="esencial">
           <h2 class="plan-name" data-i18n="plan1_name">Plan Esencial</h2>
           <div class="plan-price">$150.000</div>
-          <p class="plan-hook" data-i18n="plan1_hook">"Tu carta de presentación digital, lista en días."</p>
+          <p class="plan-hook" data-i18n="plan1_hook">"Tu carta de presentación digital, lista en días." Ideal si necesitas una presencia profesional ya — sin vueltas, sin relleno, directa al grano.</p>
           <ul class="plan-features">
-            <li data-i18n-html="plan1_f1"><strong>Una página</strong>, 100% a medida para tu marca — nada de plantillas</li>
-            <li data-i18n-html="plan1_f2">Totalmente <strong>responsive</strong>: se ve perfecta en el celular, donde te encuentra el 80% de tus clientes</li>
-            <li data-i18n-html="plan1_f3"><strong>WhatsApp directo</strong> — tu cliente te escribe con un toque, sin formularios eternos</li>
-            <li data-i18n-html="plan1_f4"><strong>SEO base</strong>: título, descripción y estructura para que Google te entienda</li>
+            <li data-i18n-html="plan1_f1">Diseño de <strong>una página</strong>, 100% a medida para tu marca (nada de plantillas genéricas)</li>
+            <li data-i18n-html="plan1_f2">Totalmente <strong>responsive</strong>: se ve perfecto en el celular, que es donde te va a encontrar el 80% de tus clientes</li>
+            <li data-i18n-html="plan1_f3"><strong>Botón de WhatsApp directo</strong> — tu cliente te escribe con un toque, sin formularios eternos</li>
+            <li data-i18n-html="plan1_f4"><strong>SEO base</strong>: título, descripción y estructura pensada para que Google entienda tu negocio</li>
             <li data-i18n="plan1_f5">Favicon e identidad visual coherente en la pestaña del navegador</li>
-            <li data-i18n="plan1_f6">Tuyo desde el día uno, sin mensualidades ni dependencia de plataformas de terceros</li>
+            <li data-i18n="plan1_f6">Tuyo desde el día uno: sin mensualidades ni dependencia de plataformas de terceros</li>
           </ul>
           <p class="plan-for" data-i18n="plan1_for">Para quién es: negocios que necesitan tener presencia online ya, con una imagen que no dé vergüenza mostrar.</p>
           <a href="https://wa.me/5355530224?text=Hola%20Lemuel%20Labs%20%F0%9F%91%8B%20Quiero%20cotizar%20un%20sitio%20web%20para%20mi%20negocio.%0APlan%20de%20inter%C3%A9s%3A%20Esencial%0ACu%C3%A9ntenme%20un%20poco%3A%20%C2%BFqu%C3%A9%20necesito%20completar%20o%20tener%20listo%20antes%20de%20empezar%3F" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="plan1_cta">Elegir Esencial</a>
@@ -171,17 +164,17 @@
         <div class="plan-card reveal reveal-delay-1" id="profesional">
           <h2 class="plan-name" data-i18n="plan2_name">Plan Profesional</h2>
           <div class="plan-price">$200.000</div>
-          <p class="plan-hook" data-i18n="plan2_hook">"Tu negocio en movimiento."</p>
+          <p class="plan-hook" data-i18n="plan2_hook">"Tu negocio en movimiento." Todo lo del plan Esencial, llevado un escalón más allá — porque tu negocio tiene más para contar.</p>
           <ul class="plan-features">
             <li data-i18n-html="plan2_f1">Todo lo del <strong>Esencial</strong>, más:</li>
-            <li data-i18n-html="plan2_f2">Sitio de <strong>2 páginas</strong>: presentación + catálogo, servicios o carta</li>
-            <li data-i18n-html="plan2_f3"><strong>WhatsApp contextual</strong>: cada sección arma su propio mensaje pre-cargado</li>
-            <li data-i18n-html="plan2_f4"><strong>Formulario con validación real</strong> y confirmación de envío</li>
-            <li data-i18n="plan2_f5">Animaciones sutiles al hacer scroll — se siente vivo, no una foto estática</li>
-            <li data-i18n-html="plan2_f6"><strong>Analítica integrada</strong> desde el día uno: sabes cuánta gente entra a tu sitio y qué es lo que más le interesa</li>
-            <li data-i18n="plan2_f7">Meta tags completos: se ve como tarjeta profesional al compartir en redes</li>
+            <li data-i18n-html="plan2_f2">Sitio de <strong>2 páginas</strong>: tu presentación + una sección propia para catálogo, servicios o carta</li>
+            <li data-i18n-html="plan2_f3"><strong>WhatsApp contextual</strong>: cada producto o sección arma su propio mensaje pre-cargado, no un botón genérico repetido</li>
+            <li data-i18n-html="plan2_f4"><strong>Formulario de contacto</strong> con validación real (no el cartelito feo del navegador) y confirmación de envío</li>
+            <li data-i18n="plan2_f5">Animaciones sutiles al hacer scroll — el sitio se siente vivo, no una foto estática</li>
+            <li data-i18n-html="plan2_f6"><strong>Analítica integrada</strong> — sabes cuánta gente entra y qué mira, desde el día uno</li>
+            <li data-i18n="plan2_f7">Meta tags completos (Open Graph/Twitter) — cuando compartes tu web en redes, se ve como una tarjeta profesional, no un link pelado</li>
           </ul>
-          <p class="plan-for" data-i18n="plan2_for">Para quién es: negocios con trayectoria que necesitan una web tan seria como el negocio en persona.</p>
+          <p class="plan-for" data-i18n="plan2_for">Para quién es: negocios que ya tienen algo de trayectoria y necesitan que la web hable con la misma seriedad que el negocio en persona.</p>
           <a href="https://wa.me/5355530224?text=Hola%20Lemuel%20Labs%20%F0%9F%91%8B%20Quiero%20cotizar%20un%20sitio%20web%20para%20mi%20negocio.%0APlan%20de%20inter%C3%A9s%3A%20Profesional%0ACu%C3%A9ntenme%20un%20poco%3A%20%C2%BFqu%C3%A9%20necesito%20completar%20o%20tener%20listo%20antes%20de%20empezar%3F" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="plan2_cta">Elegir Profesional</a>
         </div>
 
@@ -210,11 +203,10 @@
 
       <div class="plans-note reveal">
         <h3 data-i18n="plans_note_h3">¿Cuál elegir?</h3>
-        <p data-i18n-html="plans_note_p1">Si lo que buscas es tener presencia online, <strong>Esencial</strong> te resuelve. Si tu negocio ya tiene trayectoria y necesita más presencia, <strong>Profesional</strong> es el punto justo.</p>
-        <p data-i18n-html="plans_note_p2">Pero si comparas la diferencia entre lo que pagas y lo que obtienes con <strong>Premium</strong>, la cuenta se hace sola: por menos de $50.000 más que el Profesional, obtienes un sitio multilenguaje, con modo oscuro, efectos editoriales y SEO avanzado — el mismo nivel que tiene Café Moretti, nuestro proyecto de demostración. No es que el Premium sea "el caro". Es que los otros dos son el punto de partida.</p>
+        <p data-i18n-html="plans_note_p1">Si lo que buscas es estar online, <strong>Esencial</strong> te resuelve. Si tu negocio ya tiene peso y necesita más presencia, <strong>Profesional</strong> es el punto justo.</p>
+        <p data-i18n-html="plans_note_p2">Pero si miras la diferencia entre lo que pagas y lo que te llevas con <strong>Premium</strong>, la cuenta se hace sola: por menos de $50.000 más que el Profesional, te llevas un sitio multilenguaje, con modo oscuro, efectos editoriales, SEO avanzado con datos estructurados y protección antispam real — el mismo nivel que tiene Café Moretti, nuestro proyecto de demostración. No es que el Premium sea "el caro". Es que los otros dos son el punto de partida.</p>
       </div>
 
-      <!-- D2: comparación rápida entre planes -->
       <div class="section-head reveal" style="margin-top:4rem;">
         <span class="eyebrow" data-i18n="compare_eyebrow">Comparación rápida</span>
         <h2 data-i18n="compare_h2">Qué incluye cada nivel</h2>

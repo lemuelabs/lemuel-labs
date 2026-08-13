@@ -16,7 +16,6 @@ Sitio de presentación de **Lemuel Labs**, un estudio de desarrollo web dedicado
 │   ├── main.js           Lógica compartida entre páginas
 │   └── proyecto.js        Lógica específica de proyecto.html
 ├── img/                 Imágenes, ícono de marca y assets sociales
-├── data/                Configuración liviana en formato JSON
 ├── robots.txt
 └── sitemap.xml
 ```
