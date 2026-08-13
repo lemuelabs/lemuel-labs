@@ -89,7 +89,13 @@
     form_label_message: { es: 'Mensaje', en: 'Message', pt: 'Mensagem' },
     form_placeholder_message: { es: 'Cuéntanos qué necesitas para tu negocio', en: 'Tell us what your business needs', pt: 'Conte o que seu negócio precisa' },
     form_submit: { es: 'Enviar mensaje', en: 'Send message', pt: 'Enviar mensagem' },
+    form_submit_whatsapp: { es: 'Abrir WhatsApp', en: 'Open WhatsApp', pt: 'Abrir WhatsApp' },
     form_fallback_text: { es: '¿No se envió? Escríbenos directo por', en: "Didn't go through? Message us directly on", pt: 'Não enviou? Fale com a gente direto pelo' },
+    form_method_label: { es: '¿Cómo prefieres que te contactemos?', en: 'How would you like us to contact you?', pt: 'Como você prefere que a gente entre em contato?' },
+    form_method_email: { es: 'Email', en: 'Email', pt: 'E-mail' },
+    form_method_whatsapp: { es: 'WhatsApp', en: 'WhatsApp', pt: 'WhatsApp' },
+    form_status_email_success: { es: 'Gracias — te respondemos por email a la brevedad.', en: 'Thanks — we\'ll reply by email shortly.', pt: 'Obrigado — respondemos por e-mail em breve.' },
+    form_status_whatsapp_success: { es: 'Te abrimos WhatsApp con tu mensaje ya armado — solo falta que lo envíes.', en: 'We opened WhatsApp with your message ready to go — just send it.', pt: 'Abrimos o WhatsApp com sua mensagem pronta — falta só enviar.' },
 
     /* --- Index: resumen de servicios --- */
     services_eyebrow: { es: 'Qué hacemos', en: 'What we do', pt: 'O que fazemos' },
@@ -135,7 +141,7 @@
     plan2_f3: { es: '<strong>WhatsApp contextual</strong>: cada sección arma su propio mensaje pre-cargado', en: '<strong>Contextual WhatsApp</strong>: each section builds its own pre-filled message', pt: '<strong>WhatsApp contextual</strong>: cada seção gera sua própria mensagem pré-preenchida' },
     plan2_f4: { es: '<strong>Formulario con validación real</strong> y confirmación de envío', en: '<strong>Form with real validation</strong> and submission confirmation', pt: '<strong>Formulário com validação real</strong> e confirmação de envio' },
     plan2_f5: { es: 'Animaciones sutiles al hacer scroll — se siente vivo, no una foto estática', en: 'Subtle scroll animations — it feels alive, not a static photo', pt: 'Animações sutis ao rolar a página — parece vivo, não uma foto estática' },
-    plan2_f6: { es: '<strong>Analítica integrada</strong> desde el día uno', en: '<strong>Built-in analytics</strong> from day one', pt: '<strong>Analytics integrado</strong> desde o primeiro dia' },
+    plan2_f6: { es: '<strong>Analítica integrada</strong> desde el día uno: sabes cuánta gente entra a tu sitio y qué es lo que más le interesa', en: '<strong>Built-in analytics</strong> from day one: know how many people visit your site and what they\'re most interested in', pt: '<strong>Analytics integrado</strong> desde o primeiro dia: saiba quantas pessoas visitam seu site e o que mais interessa a elas' },
     plan2_f7: { es: 'Meta tags completos: se ve como tarjeta profesional al compartir en redes', en: 'Full meta tags: looks like a professional card when shared on social media', pt: 'Meta tags completas: aparece como um cartão profissional ao compartilhar nas redes' },
     plan2_for: { es: 'Para quién es: negocios con trayectoria que necesitan una web tan seria como el negocio en persona.', en: 'Who it\'s for: established businesses that need a website as serious as the business itself.', pt: 'Para quem é: negócios com trajetória que precisam de um site tão sério quanto o negócio em pessoa.' },
     plan2_cta: { es: 'Elegir Profesional', en: 'Choose Professional', pt: 'Escolher Profissional' },
@@ -157,7 +163,7 @@
 
     plans_note_h3: { es: '¿Cuál elegir?', en: 'Which one to choose?', pt: 'Qual escolher?' },
     plans_note_p1: { es: 'Si lo que buscas es tener presencia online, <strong>Esencial</strong> te resuelve. Si tu negocio ya tiene trayectoria y necesita más presencia, <strong>Profesional</strong> es el punto justo.', en: 'If you just need an online presence, <strong>Essential</strong> covers it. If your business is established and needs more presence, <strong>Professional</strong> is the sweet spot.', pt: 'Se o que você busca é ter presença online, o <strong>Essencial</strong> resolve. Se seu negócio já tem trajetória e precisa de mais presença, o <strong>Profissional</strong> é o ponto certo.' },
-    plans_note_p2: { es: 'Pero si comparas la diferencia entre lo que pagas y lo que obtienes con <strong>Premium</strong>, la cuenta se hace sola: por menos de $60.000 más que el Profesional, obtienes un sitio multilenguaje, con modo oscuro, efectos editoriales y SEO avanzado — el mismo nivel que tiene Café Moretti, nuestro proyecto de demostración. No es que el Premium sea "el caro". Es que los otros dos son el punto de partida.', en: 'But compare what you pay to what you get with <strong>Premium</strong>, and the math does itself: for less than $60,000 more than Professional, you get a multilingual site, dark mode, editorial effects and advanced SEO — the same level as Café Moretti, our demo project. Premium isn\'t "the expensive one". The other two are the starting point.', pt: 'Mas se você comparar a diferença entre o que paga e o que recebe com o <strong>Premium</strong>, a conta fecha sozinha: por menos de $60.000 a mais que o Profissional, você leva um site multilíngue, com modo escuro, efeitos editoriais e SEO avançado — o mesmo nível do Café Moretti, nosso projeto de demonstração. Não é que o Premium seja "o caro". É que os outros dois são o ponto de partida.' },
+    plans_note_p2: { es: 'Pero si comparas la diferencia entre lo que pagas y lo que obtienes con <strong>Premium</strong>, la cuenta se hace sola: por menos de $50.000 más que el Profesional, obtienes un sitio multilenguaje, con modo oscuro, efectos editoriales y SEO avanzado — el mismo nivel que tiene Café Moretti, nuestro proyecto de demostración. No es que el Premium sea "el caro". Es que los otros dos son el punto de partida.', en: 'But compare what you pay to what you get with <strong>Premium</strong>, and the math does itself: for less than $50,000 more than Professional, you get a multilingual site, dark mode, editorial effects and advanced SEO — the same level as Café Moretti, our demo project. Premium isn\'t "the expensive one". The other two are the starting point.', pt: 'Mas se você comparar a diferença entre o que paga e o que recebe com o <strong>Premium</strong>, a conta fecha sozinha: por menos de $50.000 a mais que o Profissional, você leva um site multilíngue, com modo escuro, efeitos editoriais e SEO avançado — o mesmo nível do Café Moretti, nosso projeto de demonstração. Não é que o Premium seja "o caro". É que os outros dois são o ponto de partida.' },
 
     /* --- Planes: tabla comparativa (D2) --- */
     compare_eyebrow: { es: 'Comparación rápida', en: 'Quick comparison', pt: 'Comparação rápida' },
@@ -184,7 +190,7 @@
     compare_row_a11y: { es: 'Accesibilidad', en: 'Accessibility', pt: 'Acessibilidade' },
 
     /* --- Servicios: "Lo que tiene tu sitio" --- */
-    premium_note_p: { es: 'Estas diez funciones vienen incluidas en el <a href="planes.html#premium">plan Premium ($350.000)</a>. No son promesas de folleto: cada una está funcionando ahora mismo en esta página. Prueba el interruptor de modo claro/oscuro o el selector de idioma de arriba.', en: 'These ten features are included in the <a href="planes.html#premium">Premium plan ($350,000)</a>. They\'re not brochure promises: every one is running right now on this page. Try the light/dark toggle or the language selector above.', pt: 'Estas dez funções vêm incluídas no <a href="planes.html#premium">plano Premium ($350.000)</a>. Não são promessas de folheto: cada uma está funcionando agora mesmo nesta página. Experimente o interruptor de modo claro/escuro ou o seletor de idioma acima.' },
+    premium_note_p: { es: 'Estas diez funciones vienen incluidas en el <a href="planes.html#premium">plan Premium ($250.000)</a>. No son promesas de folleto: cada una está funcionando ahora mismo en esta página. Prueba el interruptor de modo claro/oscuro o el selector de idioma de arriba.', en: 'These ten features are included in the <a href="planes.html#premium">Premium plan ($250,000)</a>. They\'re not brochure promises: every one is running right now on this page. Try the light/dark toggle or the language selector above.', pt: 'Estas dez funções vêm incluídas no <a href="planes.html#premium">plano Premium ($250.000)</a>. Não são promessas de folheto: cada uma está funcionando agora mesmo nesta página. Experimente o interruptor de modo claro/escuro ou o seletor de idioma acima.' },
     lead_p: { es: 'Diseñar bonito es fácil de simular. Lo que realmente separa un sitio de estudio de una plantilla con el logo pegado encima es todo lo que pasa por debajo: cómo lee el teclado, cómo carga en un celular con mala señal, cómo se ve cuando alguien lo comparte en WhatsApp. Estas son las diez cosas que hacemos distinto.', en: 'A pretty design is easy to fake. What really sets a studio site apart from a template with a logo slapped on top is everything happening underneath: how it reads on a keyboard, how it loads on a phone with a weak signal, how it looks when someone shares it on WhatsApp. Here are the ten things we do differently.', pt: 'Um design bonito é fácil de simular. O que realmente separa um site de estúdio de um template com a logo colada em cima é tudo o que acontece por baixo: como ele lê pelo teclado, como carrega num celular com sinal fraco, como fica quando alguém compartilha no WhatsApp. Estas são as dez coisas que fazemos diferente.' },
 
     feat1_h3: { es: 'Sistema de diseño editorial 100% exclusivo', en: '100% exclusive editorial design system', pt: 'Sistema de design editorial 100% exclusivo' },
@@ -256,7 +262,7 @@
     overlay.setAttribute('aria-hidden', 'true');
     overlay.style.mask = 'url(#irisMask)';
     overlay.style.webkitMask = 'url(#irisMask)';
-    overlay.innerHTML = '<span class="iris-logo">Lemuel<span>Labs</span></span>';
+    overlay.innerHTML = '<span class="iris-logo">Lemuel <img src="img/logo.webp" alt="" class="logo-mark"> <span>Labs</span></span>';
     document.body.appendChild(overlay);
   }
 
@@ -537,20 +543,30 @@
       });
     }
 
-    if (!navLinks) return;
-    navLinks.querySelectorAll('a[href]').forEach((link) => {
+    // Interceptamos TODOS los links internos del documento — no solo los
+    // del nav — para que cualquier <a href="*.html"> del sitio (botones
+    // del hero, CTAs dentro de una sección, "ver detalle →", etc.)
+    // dispare la misma transición "iris" que la navegación del menú.
+    // Los links externos (target="_blank", como WhatsApp o el proyecto
+    // en vivo de Café Moretti) quedan afuera por no ser del mismo origin.
+    document.querySelectorAll('a[href]').forEach((link) => {
       link.addEventListener('click', (e) => {
-        navLinks.classList.remove('open');
-        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        if (navLinks && navLinks.contains(link)) {
+          navLinks.classList.remove('open');
+          if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        }
 
         // Solo interceptamos navegación interna real (mismas páginas del sitio)
         const url = new URL(link.href, window.location.href);
         const isInternal = url.origin === window.location.origin && /\.html?$/.test(url.pathname);
-        const isSamePage = url.pathname === window.location.pathname;
         if (!isInternal || link.target === '_blank') return;
 
+        // Ancla a la misma página (o la misma página sin ancla): scroll
+        // normal, sin repetir la transición.
+        const isSamePage = url.pathname === window.location.pathname;
+        if (isSamePage) return;
+
         e.preventDefault();
-        if (isSamePage) return; // ya estamos ahí, no repetir la transición
         runIrisNavigate(link.href);
       });
     });
@@ -683,6 +699,8 @@
     const honeypot = form.querySelector('#website');
     const status = form.querySelector('.form-status');
     const fallback = document.getElementById('formFallback');
+    const methodRadios = Array.from(form.querySelectorAll('input[name="contactMethod"]'));
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     const validators = {
       name: (v) => v.trim().length >= 2,
@@ -694,6 +712,24 @@
       email: 'Necesitamos un email válido para responderte.',
       message: 'Cuéntanos un poco más — al menos 10 caracteres.'
     };
+
+    function currentMethod() {
+      const checked = methodRadios.find((r) => r.checked);
+      return checked ? checked.value : 'email';
+    }
+
+    // El texto del botón depende del método elegido, así que actualizamos
+    // también su data-i18n para que un cambio de idioma posterior siga
+    // mostrando el texto correcto (ver applyLanguage()).
+    function updateSubmitLabel() {
+      if (!submitBtn) return;
+      const lang = document.documentElement.lang || 'es';
+      const key = currentMethod() === 'whatsapp' ? 'form_submit_whatsapp' : 'form_submit';
+      submitBtn.setAttribute('data-i18n', key);
+      submitBtn.textContent = (dict[key] && dict[key][lang]) || dict[key].es;
+    }
+    methodRadios.forEach((r) => r.addEventListener('change', updateSubmitLabel));
+    updateSubmitLabel();
 
     function validateField(key) {
       const el = fields[key];
@@ -718,7 +754,7 @@
       e.preventDefault();
 
       // Honeypot: si un bot completó este campo invisible, fingimos
-      // éxito y no mandamos nada.
+      // éxito y no mandamos nada (ni por email ni por WhatsApp).
       if (honeypot && honeypot.value.trim() !== '') {
         form.reset();
         if (status) { status.textContent = '¡Gracias! Te vamos a responder a la brevedad.'; status.classList.remove('is-error'); }
@@ -734,10 +770,28 @@
         return;
       }
 
-      const btn = form.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Enviando…';
-      btn.disabled = true;
+      const lang = document.documentElement.lang || 'es';
+
+      // Método WhatsApp: no hay backend que "envíe" nada — armamos el
+      // link con el mensaje pre-cargado y lo abrimos en una pestaña
+      // nueva, sin tocar el servicio de formularios estático.
+      if (currentMethod() === 'whatsapp') {
+        const name = fields.name.value.trim();
+        const message = fields.message.value.trim();
+        const text = 'Hola Lemuel Labs 👋 Soy ' + name + '. ' + message + '\nPrefiero que me contacten por WhatsApp.';
+        const url = 'https://wa.me/5355530224?text=' + encodeURIComponent(text);
+        window.open(url, '_blank', 'noopener');
+
+        if (status) { status.textContent = (dict.form_status_whatsapp_success[lang] || dict.form_status_whatsapp_success.es); status.classList.remove('is-error'); }
+        if (fallback) fallback.hidden = true;
+        form.reset();
+        updateSubmitLabel();
+        return;
+      }
+
+      const original = submitBtn.textContent;
+      submitBtn.textContent = 'Enviando…';
+      submitBtn.disabled = true;
       if (status) { status.textContent = ''; status.classList.remove('is-error'); }
       if (fallback) fallback.hidden = true;
 
@@ -750,16 +804,16 @@
 
         if (!response.ok) throw new Error('Respuesta no exitosa: ' + response.status);
 
-        btn.textContent = '¡Mensaje enviado!';
-        if (status) { status.textContent = 'Gracias — te respondemos por email o WhatsApp a la brevedad.'; status.classList.remove('is-error'); }
+        submitBtn.textContent = '¡Mensaje enviado!';
+        if (status) { status.textContent = (dict.form_status_email_success[lang] || dict.form_status_email_success.es); status.classList.remove('is-error'); }
         form.reset();
         setTimeout(() => {
-          btn.textContent = original;
-          btn.disabled = false;
+          updateSubmitLabel();
+          submitBtn.disabled = false;
         }, 3000);
       } catch (err) {
-        btn.textContent = original;
-        btn.disabled = false;
+        submitBtn.textContent = original;
+        submitBtn.disabled = false;
         if (status) { status.textContent = 'No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos por WhatsApp.'; status.classList.add('is-error'); }
         if (fallback) fallback.hidden = false;
       }
