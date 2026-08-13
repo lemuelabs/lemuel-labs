@@ -681,10 +681,17 @@ section{ position:relative; padding:6.5rem 0; }
 
 /* Tabla comparativa (D2) */
 .compare-table-wrap{
+  position:relative;
   margin-top:1.5rem;
   overflow-x:auto;
   border:1px solid var(--border);
   border-radius:6px;
+}
+.compare-scroll-hint{
+  display:none;
+  font-size:0.78rem;
+  color:var(--text-dimmer);
+  margin-top:0.6rem;
 }
 .compare-table{
   width:100%;
@@ -1088,4 +1095,22 @@ html.iris-pending body > *:not(.iris-overlay){ visibility:hidden; }
   .lang-switch-btn{ padding:0 0.5rem; }
   .lang-switch-list{ right:-0.5rem; }
   .plan-card.featured::before{ font-size:0.6rem; padding:0.3rem 0.6rem; left:1.4rem; max-width:calc(100% - 2.8rem); }
+
+  /* Punto 2: la tabla comparativa en mobile no cabe entera (min-width:520px
+     en un viewport de ~360px), así que además de compactarla agresivamente
+     agregamos una señal visual clara de que hay que deslizar — el scroll
+     horizontal solo no alcanza como pista. */
+  .compare-scroll-hint{ display:block; }
+  .compare-table-wrap::after{
+    content:"";
+    position:absolute;
+    top:0; right:0; bottom:0;
+    width:28px;
+    background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--bg-alt-2) 85%, transparent));
+    pointer-events:none;
+  }
+  .compare-table{ min-width:400px; font-size:0.74rem; }
+  .compare-table thead th{ padding:0.6rem 0.5rem; font-size:0.66rem; }
+  .compare-table tbody th{ padding:0.55rem 0.5rem; white-space:normal; font-size:0.76rem; }
+  .compare-table tbody td{ padding:0.55rem 0.4rem; }
 }

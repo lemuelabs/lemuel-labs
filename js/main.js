@@ -103,7 +103,7 @@
     services_p: { es: 'No vendemos "diseño web" genérico. Vendemos tres niveles claros, cada uno pensado para un momento distinto.', en: 'We don\'t sell generic "web design". We sell three clear levels, each built for a different moment.', pt: 'Não vendemos "design web" genérico. Vendemos três níveis claros, cada um pensado para um momento diferente.' },
     service1_h3: { es: 'Tu carta de presentación', en: 'Your introduction card', pt: 'Seu cartão de apresentação' },
     service1_p: { es: 'Una página 100% a medida, responsive y con WhatsApp directo. Lista en días, sin vueltas.', en: 'A 100% custom, responsive page with direct WhatsApp. Ready in days, no fuss.', pt: 'Uma página 100% sob medida, responsiva e com WhatsApp direto. Pronta em dias, sem complicação.' },
-    service2_h3: { es: 'Cuando una página ya no alcanza', en: 'When one page is no longer enough', pt: 'Quando uma página já não é suficiente' },
+    service2_h3: { es: 'Tu negocio en movimiento', en: 'Your business in motion', pt: 'Seu negócio em movimento' },
     service2_p: { es: 'Dos páginas, formulario validado, analítica y animaciones al hacer scroll.', en: 'Two pages, validated form, analytics, and scroll animations.', pt: 'Duas páginas, formulário validado, analytics e animações ao rolar a página.' },
     service3_h3: { es: 'La referencia de tu rubro', en: 'The reference in your industry', pt: 'A referência do seu setor' },
     service3_p: { es: 'Sistema de diseño editorial, multilenguaje, modo claro/oscuro y SEO avanzado — como este mismo sitio.', en: 'Editorial design system, multilingual, light/dark mode, and advanced SEO — like this very site.', pt: 'Sistema de design editorial, multilíngue, modo claro/escuro e SEO avançado — como este mesmo site.' },
@@ -122,6 +122,36 @@
     why4_p: { es: 'De la idea al sitio en vivo, sin vueltas ni demoras injustificadas.', en: 'From idea to live site, with no unnecessary detours or delays.', pt: 'Da ideia ao site no ar, sem rodeios nem atrasos injustificados.' },
     why_cta: { es: '¿Quieres ver el detalle técnico completo? Conoce todo lo que tiene tu sitio →', en: 'Want to see the full technical detail? See everything your site gets →', pt: 'Quer ver todo o detalhe técnico? Conheça tudo o que seu site tem →' },
 
+    /* --- Index: prueba viva --- */
+    proof_tag1: { es: 'Plan Premium', en: 'Premium Plan', pt: 'Plano Premium' },
+    proof_tag3: { es: 'Proyecto de demostración', en: 'Demo project', pt: 'Projeto de demonstração' },
+    proof_h2: { es: 'La prueba está en este mismo sitio', en: 'The proof is on this very site', pt: 'A prova está neste mesmo site' },
+    proof_p: { es: 'Lemuel Labs está construido con el mismo nivel de detalle que vendemos en el plan Premium — modo claro/oscuro, multilenguaje, sistema editorial propio. Café Moretti, nuestro proyecto de demostración, se construyó con ese mismo plan para mostrarlo en un caso de uso real.', en: 'Lemuel Labs is built with the same level of detail we sell in the Premium plan — light/dark mode, multilingual, its own editorial system. Café Moretti, our demo project, was built with that same plan to show it in a real-world use case.', pt: 'A Lemuel Labs é construída com o mesmo nível de detalhe que vendemos no plano Premium — modo claro/escuro, multilíngue, sistema editorial próprio. O Café Moretti, nosso projeto de demonstração, foi construído com esse mesmo plano para mostrá-lo em um caso de uso real.' },
+    proof_cta1: { es: 'Ver el proyecto Café Moretti →', en: 'See the Café Moretti project →', pt: 'Ver o projeto Café Moretti →' },
+    proof_cta2: { es: 'Ver plan Premium', en: 'See Premium plan', pt: 'Ver plano Premium' },
+
+    /* --- Servicios: heading oculto --- */
+    servicios_hidden_h2: { es: 'Las diez funciones del plan Premium', en: 'The ten features of the Premium plan', pt: 'As dez funções do plano Premium' },
+
+    /* --- Proyecto: cobertura completa --- */
+    proyecto_cafeteria_tag: { es: 'Cafetería', en: 'Coffee shop', pt: 'Cafeteria' },
+    proyecto_intro_p: { es: 'Café Moretti es un negocio ficticio: lo creamos nosotros mismos para mostrar, en un caso de uso real, todo lo que incluye el plan Premium. El sitio es funcional y está publicado — no es una maqueta —, pero no hay un cliente real detrás. Está pensado como sitio de presentación para una cafetería, con menú, ubicación y contacto en un vistazo.', en: 'Café Moretti is a fictional business: we created it ourselves to show everything the Premium plan includes in a real-world use case. The site is functional and published — not a mockup — but there\'s no real client behind it. It\'s designed as an introduction site for a coffee shop, with menu, location and contact at a glance.', pt: 'O Café Moretti é um negócio fictício: nós mesmos o criamos para mostrar, em um caso de uso real, tudo o que o plano Premium inclui. O site é funcional e está publicado — não é uma maquete —, mas não há um cliente real por trás. Foi pensado como site de apresentação para uma cafeteria, com cardápio, localização e contato em uma visão geral.' },
+    proyecto_live_cta: { es: 'Ver proyecto en vivo →', en: 'See the live project →', pt: 'Ver projeto ao vivo →' },
+    proyecto_why_eyebrow: { es: 'Por qué Premium', en: 'Why Premium', pt: 'Por que Premium' },
+    proyecto_why_h2: { es: 'Lo que este nivel le suma al proyecto', en: 'What this level adds to the project', pt: 'O que este nível agrega ao projeto' },
+    proyecto_why_p: { es: 'Diseñamos a Café Moretti como una cafetería de barrio que no necesita un catálogo de productos, sino transmitir calidez desde el primer segundo — el escenario ideal para mostrar lo que suma el plan Premium. <a href="servicios.html" style="color:var(--accent-text); text-decoration:underline;">Ver todas las funciones del plan Premium →</a>', en: 'We designed Café Moretti as a neighborhood coffee shop that doesn\'t need a product catalog, but rather needs to convey warmth from the first second — the ideal scenario to show what the Premium plan adds. <a href="servicios.html" style="color:var(--accent-text); text-decoration:underline;">See all Premium plan features →</a>', pt: 'Projetamos o Café Moretti como uma cafeteria de bairro que não precisa de um catálogo de produtos, mas sim transmitir aconchego desde o primeiro segundo — o cenário ideal para mostrar o que o plano Premium agrega. <a href="servicios.html" style="color:var(--accent-text); text-decoration:underline;">Ver todas as funções do plano Premium →</a>' },
+    detail1_h3: { es: 'Diseño editorial propio', en: 'Custom editorial design', pt: 'Design editorial próprio' },
+    detail1_p: { es: 'Tipografía y composición pensadas para la identidad de una cafetería de barrio, no para una plantilla de "food & beverage" genérica.', en: 'Typography and composition designed for the identity of a neighborhood coffee shop, not a generic "food & beverage" template.', pt: 'Tipografia e composição pensadas para a identidade de uma cafeteria de bairro, não para um template genérico de "food & beverage".' },
+    detail2_h3: { es: 'WhatsApp por sección', en: 'WhatsApp per section', pt: 'WhatsApp por seção' },
+    detail2_p: { es: 'El botón de contacto arma un mensaje distinto según si el visitante viene del menú, la ubicación o la reserva.', en: 'The contact button builds a different message depending on whether the visitor comes from the menu, the location, or the reservation.', pt: 'O botão de contato monta uma mensagem diferente dependendo se o visitante vem do cardápio, da localização ou da reserva.' },
+    detail3_h3: { es: 'SEO local', en: 'Local SEO', pt: 'SEO local' },
+    detail3_p: { es: 'Datos estructurados para que el negocio aparezca en Google con dirección y horario, no solo un link.', en: 'Structured data so the business shows up on Google with address and hours, not just a link.', pt: 'Dados estruturados para o negócio aparecer no Google com endereço e horário, não só um link.' },
+    proyecto_note_p: { es: 'Café Moretti es un proyecto de demostración: lo construimos nosotros mismos, sin cliente real detrás, para mostrar el nivel de detalle del plan Premium en un escenario de uso real. No inventamos un portfolio de clientes que no existen — cuando sumemos clientes reales, esta sección va a crecer con casos de verdad.', en: 'Café Moretti is a demo project: we built it ourselves, with no real client behind it, to show the level of detail in the Premium plan in a real-world scenario. We don\'t invent a portfolio of clients that don\'t exist — when we add real clients, this section will grow with real cases.', pt: 'O Café Moretti é um projeto de demonstração: nós mesmos o construímos, sem cliente real por trás, para mostrar o nível de detalhe do plano Premium em um cenário de uso real. Não inventamos um portfólio de clientes que não existem — quando somarmos clientes reais, esta seção vai crescer com casos de verdade.' },
+    proyecto_cta_final: { es: 'Quiero un sitio así →', en: 'I want a site like this →', pt: 'Quero um site assim →' },
+    reviews_eyebrow: { es: 'Reseñas', en: 'Reviews', pt: 'Avaliações' },
+    reviews_h2: { es: 'Reseñas próximamente', en: 'Reviews coming soon', pt: 'Avaliações em breve' },
+    reviews_p: { es: 'Todavía no tenemos clientes reales para citar acá. Cuando los tengamos, sus reseñas van a aparecer en este espacio — con nombre y todo, nada inventado.', en: 'We don\'t have real clients to quote here yet. When we do, their reviews will appear in this space — with names and everything, nothing made up.', pt: 'Ainda não temos clientes reais para citar aqui. Quando tivermos, as avaliações deles vão aparecer neste espaço — com nome e tudo, nada inventado.' },
+
     /* --- Planes: nombres, hooks, features y CTA --- */
     plan1_name: { es: 'Plan Esencial', en: 'Essential Plan', pt: 'Plano Essencial' },
     plan1_hook: { es: '"Tu carta de presentación digital, lista en días."', en: '"Your digital introduction card, ready in days."', pt: '"Seu cartão de apresentação digital, pronto em dias."' },
@@ -130,12 +160,12 @@
     plan1_f3: { es: '<strong>WhatsApp directo</strong> — tu cliente te escribe con un toque, sin formularios eternos', en: '<strong>Direct WhatsApp</strong> — your customer messages you in one tap, no endless forms', pt: '<strong>WhatsApp direto</strong> — seu cliente escreve com um toque, sem formulários intermináveis' },
     plan1_f4: { es: '<strong>SEO base</strong>: título, descripción y estructura para que Google te entienda', en: '<strong>Basic SEO</strong>: title, description and structure so Google understands your business', pt: '<strong>SEO básico</strong>: título, descrição e estrutura para o Google entender seu negócio' },
     plan1_f5: { es: 'Favicon e identidad visual coherente en la pestaña del navegador', en: 'Favicon and consistent visual identity in the browser tab', pt: 'Favicon e identidade visual coerente na aba do navegador' },
-    plan1_f6: { es: 'Tuyo desde el día uno, sin mensualidades', en: 'Yours from day one, no monthly fees', pt: 'Seu desde o primeiro dia, sem mensalidades' },
+    plan1_f6: { es: 'Tuyo desde el día uno, sin mensualidades ni dependencia de plataformas de terceros', en: 'Yours from day one, no monthly fees and no dependence on third-party platforms', pt: 'Seu desde o primeiro dia, sem mensalidades nem dependência de plataformas de terceiros' },
     plan1_for: { es: 'Para quién es: negocios que necesitan tener presencia online ya, con una imagen que no dé vergüenza mostrar.', en: 'Who it\'s for: businesses that need an online presence now, with an image they\'re not embarrassed to show.', pt: 'Para quem é: negócios que precisam de presença online agora, com uma imagem da qual não tenham vergonha.' },
     plan1_cta: { es: 'Elegir Esencial', en: 'Choose Essential', pt: 'Escolher Essencial' },
 
     plan2_name: { es: 'Plan Profesional', en: 'Professional Plan', pt: 'Plano Profissional' },
-    plan2_hook: { es: '"Cuando una página ya no alcanza."', en: '"When one page is no longer enough."', pt: '"Quando uma página já não é suficiente."' },
+    plan2_hook: { es: '"Tu negocio en movimiento."', en: '"Your business in motion."', pt: '"Seu negócio em movimento."' },
     plan2_f1: { es: 'Todo lo del <strong>Esencial</strong>, más:', en: 'Everything in <strong>Essential</strong>, plus:', pt: 'Tudo do <strong>Essencial</strong>, mais:' },
     plan2_f2: { es: 'Sitio de <strong>2 páginas</strong>: presentación + catálogo, servicios o carta', en: '<strong>2-page</strong> site: introduction + catalog, services or menu', pt: 'Site de <strong>2 páginas</strong>: apresentação + catálogo, serviços ou cardápio' },
     plan2_f3: { es: '<strong>WhatsApp contextual</strong>: cada sección arma su propio mensaje pre-cargado', en: '<strong>Contextual WhatsApp</strong>: each section builds its own pre-filled message', pt: '<strong>WhatsApp contextual</strong>: cada seção gera sua própria mensagem pré-preenchida' },
@@ -147,18 +177,18 @@
     plan2_cta: { es: 'Elegir Profesional', en: 'Choose Professional', pt: 'Escolher Profissional' },
 
     plan3_name: { es: 'Plan Premium', en: 'Premium Plan', pt: 'Plano Premium' },
-    plan3_hook: { es: '"El nivel que separa tu negocio de la competencia — literalmente." Con este plan construimos Café Moretti, nuestro proyecto de demostración, para mostrarlo en un escenario real de uso.', en: '"The level that sets your business apart from the competition — literally." We built Café Moretti, our demo project, with this plan to show it in a real-world scenario.', pt: '"O nível que separa o seu negócio da concorrência — literalmente." Foi com este plano que construímos o Café Moretti, nosso projeto de demonstração, para mostrá-lo em um cenário real.' },
+    plan3_hook: { es: '"El nivel que separa tu negocio de la competencia — literalmente." No es una versión "con más cosas" — es una categoría completamente distinta de sitio web, la misma que usamos para construir Café Moretti, nuestro proyecto de demostración, pensado para mostrar ese nivel en un escenario real de uso.', en: '"The level that sets your business apart from the competition — literally." It\'s not a version "with more stuff" — it\'s a completely different category of website, the same one we used to build Café Moretti, our demo project, designed to show that level in a real-world scenario.', pt: '"O nível que separa o seu negócio da concorrência — literalmente." Não é uma versão "com mais coisas" — é uma categoria completamente diferente de site, a mesma que usamos para construir o Café Moretti, nosso projeto de demonstração, pensado para mostrar esse nível em um cenário real de uso.' },
     plan3_f1: { es: 'Todo lo del <strong>Profesional</strong>, más:', en: 'Everything in <strong>Professional</strong>, plus:', pt: 'Tudo do <strong>Profissional</strong>, mais:' },
-    plan3_f2: { es: '🎨 Sistema de diseño editorial 100% exclusivo', en: '🎨 100% exclusive editorial design system', pt: '🎨 Sistema de design editorial 100% exclusivo' },
-    plan3_f3: { es: '✨ Efectos de scroll y transiciones de nivel superior', en: '✨ Top-tier scroll effects and transitions', pt: '✨ Efeitos de scroll e transições de nível superior' },
-    plan3_f4: { es: '🌗 Modo claro y oscuro, sin parpadeos', en: '🌗 Light and dark mode, no flicker', pt: '🌗 Modo claro e escuro, sem piscadas' },
-    plan3_f5: { es: '🌎 Sitio multilenguaje (español, inglés y portugués)', en: '🌎 Multilingual site (Spanish, English and Portuguese)', pt: '🌎 Site multilíngue (espanhol, inglês e português)' },
-    plan3_f6: { es: '📩 WhatsApp inteligente en cada punto de contacto', en: '📩 Smart WhatsApp at every touchpoint', pt: '📩 WhatsApp inteligente em cada ponto de contato' },
-    plan3_f7: { es: '🛡️ Formulario blindado antispam + validación en tiempo real', en: '🛡️ Spam-proof form + real-time validation', pt: '🛡️ Formulário blindado antispam + validação em tempo real' },
-    plan3_f8: { es: '🔍 Datos estructurados para Google', en: '🔍 Structured data for Google', pt: '🔍 Dados estruturados para o Google' },
-    plan3_f9: { es: '♿ Accesibilidad real', en: '♿ Real accessibility', pt: '♿ Acessibilidade real' },
+    plan3_f2: { es: '🎨 Sistema de diseño editorial 100% exclusivo — tipografía, composición y detalles (letras capitulares, numeración de sección, citas destacadas) construidos desde cero para tu marca, no una plantilla con tu logo pegado', en: '🎨 100% exclusive editorial design system — typography, composition and details (drop caps, section numbering, pull quotes) built from scratch for your brand, not a template with your logo slapped on', pt: '🎨 Sistema de design editorial 100% exclusivo — tipografia, composição e detalhes (letras capitulares, numeração de seção, citações destacadas) construídos do zero para sua marca, não um template com sua logo colada' },
+    plan3_f3: { es: '✨ Efectos de scroll de nivel superior — parallax en imágenes y transiciones entre páginas que hacen que navegar tu sitio se sienta como un plano secuencia continuo, no una web más', en: '✨ Top-tier scroll effects — parallax on images and page transitions that make browsing your site feel like a continuous single-take shot, not just another website', pt: '✨ Efeitos de scroll de nível superior — parallax nas imagens e transições entre páginas que fazem navegar pelo seu site parecer um plano-sequência contínuo, não mais um site qualquer' },
+    plan3_f4: { es: '🌗 Modo claro y oscuro — tu web se adapta al gusto del usuario, sin parpadeos al cargar, algo que ni las grandes cadenas tienen resuelto', en: '🌗 Light and dark mode — your site adapts to the user\'s taste, with no flicker on load, something even big chains haven\'t figured out', pt: '🌗 Modo claro e escuro — seu site se adapta ao gosto do usuário, sem piscadas ao carregar, algo que nem as grandes redes resolveram' },
+    plan3_f5: { es: '🌎 Sitio multilenguaje (español, inglés y portugués) — abre tu negocio a turistas y clientes internacionales sin escribir una palabra extra', en: '🌎 Multilingual site (Spanish, English and Portuguese) — opens your business up to tourists and international customers without writing an extra word', pt: '🌎 Site multilíngue (espanhol, inglês e português) — abre seu negócio para turistas e clientes internacionais sem escrever uma palavra extra' },
+    plan3_f6: { es: '📩 WhatsApp inteligente en cada punto de contacto — no solo por producto: cada botón del sitio sabe exactamente qué mensaje armar', en: '📩 Smart WhatsApp at every touchpoint — not just per product: every button on the site knows exactly which message to build', pt: '📩 WhatsApp inteligente em cada ponto de contato — não só por produto: cada botão do site sabe exatamente qual mensagem montar' },
+    plan3_f7: { es: '🛡️ Formulario blindado: protección antispam invisible (el bot cae solo, sin que tengas que hacer nada) + validación en tiempo real', en: '🛡️ Spam-proof form: invisible anti-spam protection (the bot trips itself up, you don\'t have to do anything) + real-time validation', pt: '🛡️ Formulário blindado: proteção antispam invisível (o bot cai sozinho, sem que você precise fazer nada) + validação em tempo real' },
+    plan3_f8: { es: '🔍 Datos estructurados para Google: tu negocio aparece en buscadores con dirección, horario y teléfono directamente en el resultado, no solo un link', en: '🔍 Structured data for Google: your business shows up in search results with address, hours and phone number right in the result, not just a link', pt: '🔍 Dados estruturados para o Google: seu negócio aparece nos buscadores com endereço, horário e telefone diretamente no resultado, não só um link' },
+    plan3_f9: { es: '♿ Accesibilidad real: el sitio respeta cuando alguien tiene las animaciones reducidas activadas en su celular — un detalle que casi nadie en el mercado se toma en serio', en: '♿ Real accessibility: the site respects reduced-motion settings on someone\'s phone — a detail almost no one in the market takes seriously', pt: '♿ Acessibilidade real: o site respeita quando alguém tem as animações reduzidas ativadas no celular — um detalhe que quase ninguém no mercado leva a sério' },
     plan3_f10: { es: 'Ver el detalle completo →', en: 'See the full detail →', pt: 'Ver o detalhe completo →' },
-    plan3_for: { es: 'Para quién es: el negocio que quiere ser la referencia de su rubro — el que la gente recomienda.', en: 'Who it\'s for: the business that wants to be the reference in its industry — the one people recommend.', pt: 'Para quem é: o negócio que quer ser a referência do seu setor — aquele que as pessoas recomendam.' },
+    plan3_for: { es: 'Para quién es: el negocio que quiere ser la referencia de su rubro en su zona — el que la gente recomienda, no solo el que la gente encuentra.', en: 'Who it\'s for: the business that wants to be the local reference in its industry — the one people recommend, not just the one people find.', pt: 'Para quem é: o negócio que quer ser a referência do seu setor na sua região — aquele que as pessoas recomendam, não só o que as pessoas encontram.' },
     plan3_cta: { es: 'Elegir Premium', en: 'Choose Premium', pt: 'Escolher Premium' },
 
     plans_note_h3: { es: '¿Cuál elegir?', en: 'Which one to choose?', pt: 'Qual escolher?' },
@@ -169,6 +199,7 @@
     compare_eyebrow: { es: 'Comparación rápida', en: 'Quick comparison', pt: 'Comparação rápida' },
     compare_h2: { es: 'Qué incluye cada nivel', en: 'What each level includes', pt: 'O que cada nível inclui' },
     compare_caption: { es: 'Comparación de funciones entre los planes Esencial, Profesional y Premium', en: 'Feature comparison between the Essential, Professional and Premium plans', pt: 'Comparação de funções entre os planos Essencial, Profissional e Premium' },
+    compare_scroll_hint: { es: 'Desliza para ver los 3 planes →', en: 'Swipe to see all 3 plans →', pt: 'Deslize para ver os 3 planos →' },
     compare_row_feature: { es: 'Función', en: 'Feature', pt: 'Função' },
     compare_row_pages: { es: 'Páginas', en: 'Pages', pt: 'Páginas' },
     compare_wa_1: { es: 'Directo', en: 'Direct', pt: 'Direto' },
@@ -664,7 +695,7 @@
   function updateCuposBadge(lang) {
     const badges = document.querySelectorAll('[data-cupos-badge]');
     if (!badges.length) return;
-    const locale = localeMap[lang] || 'es-AR';
+    const locale = localeMap[lang] || 'es-419';
     const month = new Date().toLocaleString(locale, { month: 'long' });
     const monthCap = month.charAt(0).toUpperCase() + month.slice(1);
 
@@ -824,6 +855,21 @@
      12. INIT
      ------------------------------------------------------- */
   initIrisOnLoad();
+
+  // Punto 3 (bug de "atrás" en mobile): cuando el navegador restaura esta
+  // página desde la bfcache (back/forward cache) en vez de recargarla,
+  // NO se dispara DOMContentLoaded de nuevo — el DOM vuelve exactamente
+  // en el estado congelado en que quedó al navegar (con `inert` puesto en
+  // todo por lockContentForTransition() y el overlay del iris tapando la
+  // pantalla). `pageshow` con `event.persisted === true` es la única señal
+  // fiable de que pasó esto, así que ahí reseteamos todo a su estado normal.
+  window.addEventListener('pageshow', (event) => {
+    if (!event.persisted) return;
+    unlockContentAfterTransition();
+    const overlay = document.getElementById('irisOverlay');
+    if (overlay) overlay.classList.remove('is-active', 'is-logo-visible');
+    try { sessionStorage.removeItem('lemuel-iris-open'); } catch (e) { /* noop */ }
+  });
 
   document.addEventListener('DOMContentLoaded', async () => {
     const yearEl = document.getElementById('year');
