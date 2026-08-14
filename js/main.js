@@ -10,8 +10,9 @@
      6. Estado activo del nav (URL actual + anclas si las hay)
      7. Gradiente mouse-reactive (firma visual)
      8. Scroll reveal
-     9. Formulario de contacto: honeypot + validación en vivo
-     10. Init
+     9. Tabla comparativa: indicador de scroll horizontal
+     10. Formulario de contacto: honeypot + validación en vivo
+     11. Init
    ========================================================= */
 
 (function () {
@@ -75,8 +76,8 @@
     services_eyebrow: { es: 'Qué hacemos', en: 'What we do', pt: 'O que fazemos' },
     services_h2: { es: 'Un plan para cada etapa de tu negocio', en: 'A plan for every stage of your business', pt: 'Um plano para cada etapa do seu negócio' },
     services_p: { es: 'No vendemos "diseño web" genérico. Vendemos tres niveles claros, cada uno pensado para un momento distinto.', en: 'We don\'t sell generic "web design". We sell three clear levels, each built for a different moment.', pt: 'Não vendemos "design web" genérico. Vendemos três níveis claros, cada um pensado para um momento diferente.' },
-    service1_h3: { es: 'Tu carta de presentación digital, lista en días', en: 'Your digital introduction card, ready in days', pt: 'Seu cartão de apresentação digital, pronto em dias' },
-    service1_p: { es: 'Una página 100% a medida, responsive y con WhatsApp directo. Lista en días, sin vueltas.', en: 'A 100% custom, responsive page with direct WhatsApp. Ready in days, no fuss.', pt: 'Uma página 100% sob medida, responsiva e com WhatsApp direto. Pronta em dias, sem complicação.' },
+    service1_h3: { es: 'Tu carta de presentación digital, lista en menos de 24 horas', en: 'Your digital introduction card, ready in under 24 hours', pt: 'Seu cartão de apresentação digital, pronto em menos de 24 horas' },
+    service1_p: { es: 'Una página 100% a medida, responsive y con WhatsApp directo. Lista en menos de 24 horas, sin vueltas.', en: 'A 100% custom, responsive page with direct WhatsApp. Ready in under 24 hours, no fuss.', pt: 'Uma página 100% sob medida, responsiva e com WhatsApp direto. Pronta em menos de 24 horas, sem complicação.' },
     service2_h3: { es: 'Tu negocio en movimiento', en: 'Your business in motion', pt: 'Seu negócio em movimento' },
     service2_p: { es: 'Dos páginas, formulario validado, analítica y animaciones al hacer scroll.', en: 'Two pages, validated form, analytics, and scroll animations.', pt: 'Duas páginas, formulário validado, analytics e animações ao rolar a página.' },
     service3_h3: { es: 'El nivel que separa tu negocio de la competencia — literalmente', en: 'The level that sets your business apart from the competition — literally', pt: 'O nível que separa o seu negócio da concorrência — literalmente' },
@@ -128,7 +129,7 @@
 
     /* --- Planes: nombres, hooks, features y CTA --- */
     plan1_name: { es: 'Plan Esencial', en: 'Essential Plan', pt: 'Plano Essencial' },
-    plan1_hook: { es: '"Tu carta de presentación digital, lista en días." Ideal si necesitas una presencia profesional ya — sin vueltas, sin relleno, directa al grano.', en: '"Your digital introduction card, ready in days." Ideal if you need a professional presence now — no detours, no filler, straight to the point.', pt: '"Seu cartão de apresentação digital, pronto em dias." Ideal se você precisa de uma presença profissional já — sem rodeios, sem enchimento, direto ao ponto.' },
+    plan1_hook: { es: '"Tu carta de presentación digital, lista en menos de 24 horas." Ideal si necesitas una presencia profesional ya — sin vueltas, sin relleno, directa al grano.', en: '"Your digital introduction card, ready in under 24 hours." Ideal if you need a professional presence now — no detours, no filler, straight to the point.', pt: '"Seu cartão de apresentação digital, pronto em menos de 24 horas." Ideal se você precisa de uma presença profissional já — sem rodeios, sem enchimento, direto ao ponto.' },
     plan1_f1: { es: 'Diseño de <strong>una página</strong>, 100% a medida para tu marca (nada de plantillas genéricas)', en: 'Design of <strong>one page</strong>, 100% custom for your brand (no generic templates)', pt: 'Design de <strong>uma página</strong>, 100% sob medida para sua marca (nada de templates genéricos)' },
     plan1_f2: { es: 'Totalmente <strong>responsive</strong>: se ve perfecto en el celular, que es donde te va a encontrar el 80% de tus clientes', en: 'Fully <strong>responsive</strong>: it looks perfect on mobile, which is where 80% of your customers are going to find you', pt: 'Totalmente <strong>responsivo</strong>: fica perfeito no celular, que é onde 80% dos seus clientes vão te encontrar' },
     plan1_f3: { es: '<strong>Botón de WhatsApp directo</strong> — tu cliente te escribe con un toque, sin formularios eternos', en: '<strong>Direct WhatsApp button</strong> — your customer messages you in one tap, no endless forms', pt: '<strong>Botão de WhatsApp direto</strong> — seu cliente escreve com um toque, sem formulários intermináveis' },
@@ -663,7 +664,31 @@
   }
 
   /* -------------------------------------------------------
-     9. FORMULARIO DE CONTACTO — honeypot + validación real-time
+     9. TABLA COMPARATIVA — indicador de scroll horizontal
+     ------------------------------------------------------- */
+  function initCompareScrollHint() {
+    const wrap = document.querySelector('.compare-table-wrap');
+    if (!wrap) return;
+    const hint = wrap.previousElementSibling;
+    const hintEl = hint && hint.classList.contains('compare-scroll-hint') ? hint : null;
+
+    function update() {
+      // Pequeño margen de tolerancia por redondeo de subpíxeles.
+      const hasMore = wrap.scrollLeft + wrap.clientWidth < wrap.scrollWidth - 1;
+      wrap.classList.toggle('has-more-right', hasMore);
+      if (hintEl) hintEl.classList.toggle('has-more-right', hasMore);
+    }
+
+    update();
+    wrap.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    // Los webfonts pueden cambiar el ancho real del texto después del
+    // primer render; una segunda pasada evita un cálculo desactualizado.
+    window.setTimeout(update, 300);
+  }
+
+  /* -------------------------------------------------------
+     10. FORMULARIO DE CONTACTO — honeypot + validación real-time
      ------------------------------------------------------- */
   function initContactForm() {
     const form = document.getElementById('contactForm');
@@ -799,7 +824,7 @@
   }
 
   /* -------------------------------------------------------
-     10. INIT
+     11. INIT
      ------------------------------------------------------- */
   initIrisOnLoad();
 
@@ -828,6 +853,7 @@
     initLanguage();
     initMouseGradient();
     initReveal();
+    initCompareScrollHint();
     initContactForm();
   });
 })();
