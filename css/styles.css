@@ -179,7 +179,6 @@ button{ font:inherit; }
 .reveal.in-view{ opacity:1; transform:translateY(0); }
 .reveal-delay-1.in-view{ transition-delay:0.08s; }
 .reveal-delay-2.in-view{ transition-delay:0.16s; }
-.reveal-delay-3.in-view{ transition-delay:0.24s; }
 
 .btn{
   display:inline-flex;
@@ -474,7 +473,6 @@ section{ position:relative; padding:6.5rem 0; }
   letter-spacing:-0.005em;
 }
 .section-head p{ margin-top:1.1rem; color:var(--text-dim); font-size:1.05rem; max-width:42ch; }
-.section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
 
 /* ---------------------------------------------------------
    7. BENTO DE SERVICIOS (resumen en index)
@@ -663,11 +661,6 @@ section{ position:relative; padding:6.5rem 0; }
   overflow-x:auto;
   border:1px solid var(--border);
   border-radius:6px;
-}.compare-scroll-hint{
-  display:none;
-  font-size:0.78rem;
-  color:var(--text-dimmer);
-  margin-top:0.6rem;
 }
 .compare-table{
   width:100%;
@@ -1071,13 +1064,12 @@ html.iris-pending body > *:not(.iris-overlay){ visibility:hidden; }
   .lang-switch-list{ right:-0.5rem; }
   .plan-card.featured::before{ font-size:0.6rem; padding:0.3rem 0.6rem; left:1.4rem; max-width:calc(100% - 2.8rem); }
 
-  /* La tabla comparativa no entra completa en un viewport angosto (~360px);
-     además de compactarla agresivamente acá, sumamos una señal visual
-     clara de que hay que deslizar — el scroll horizontal solo no alcanza
-     como pista. El degradado y el texto de aviso solo se muestran
-     mientras `main.js` detecta que queda contenido sin ver a la derecha;
-     así nunca quedan superpuestos a la última columna. */
-  .compare-scroll-hint.has-more-right{ display:block; }
+  /* Con un layout de ancho natural (sin comprimir columnas por
+     porcentaje), la tabla necesita desplazamiento horizontal en mobile
+     para que el contenido tenga aire — el degradado avisa que hay más
+     para ver. initCompareScrollHint(), en main.js, lo muestra u oculta
+     según el scroll real. */
+  .compare-table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .compare-table-wrap::after{
     content:"";
     position:absolute;
@@ -1086,11 +1078,11 @@ html.iris-pending body > *:not(.iris-overlay){ visibility:hidden; }
     background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--bg-alt-2) 85%, transparent));
     pointer-events:none;
     opacity:0;
-    transition:opacity 0.2s ease;
+    transition:opacity 0.15s ease;
   }
   .compare-table-wrap.has-more-right::after{ opacity:1; }
-  .compare-table{ min-width:400px; font-size:0.74rem; }
-  .compare-table thead th{ padding:0.6rem 0.5rem; font-size:0.66rem; }
-  .compare-table tbody th{ padding:0.55rem 0.5rem; white-space:normal; font-size:0.76rem; }
-  .compare-table tbody td{ padding:0.55rem 0.4rem; }
+  .compare-table{ min-width:480px; font-size:0.82rem; }
+  .compare-table thead th{ padding:0.75rem 0.85rem; font-size:0.7rem; }
+  .compare-table tbody th{ padding:0.7rem 0.85rem; font-size:0.82rem; }
+  .compare-table tbody td{ padding:0.7rem 0.6rem; }
 }

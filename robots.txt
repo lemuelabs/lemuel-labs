@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lemuelabs.github.io/lemuel-labs/sitemap.xml
+Sitemap: https://lemuel-labs.lemuel-labs.workers.dev/sitemap.xml
